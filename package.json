@@ -1,5 +1,6 @@
 {
-  "name": "clean-react-app",
+  "name": "@rubemfsv/clean-react-app",
+  "author": "rubemfsv",
   "version": "1.0.0",
   "description": "Clean React App",
   "main": "index.js",
@@ -18,7 +19,6 @@
     "type": "git",
     "url": "git+https://github.com/rubemfsv/clean-react-app.git"
   },
-  "author": "rubemfsv",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rubemfsv/clean-react-app/issues"
