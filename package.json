@@ -1,7 +1,7 @@
 {
   "name": "@rubemfsv/clean-react-app",
   "author": "rubemfsv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Clean React App",
   "main": "index.js",
   "scripts": {
@@ -75,7 +75,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.1.0",
-    "react-router-dom": "^5.2.0",
-    "yargs": "^17.5.1"
+    "react-router-dom": "^5.2.0"
   }
 }
