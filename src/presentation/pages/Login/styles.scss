@@ -1,0 +1,87 @@
+@import '../../styles/colors.scss';
+
+.login {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+
+    @media (max-width: 1000px) {
+      max-width: 1000px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 600px;
+      height: 600px;
+      background-color: $white;
+      border-radius: 50px;
+      background-repeat: no-repeat;
+      background-size: 500px 500px;
+      animation: LoginAnimation 1.2s;
+
+      .loginTitle {
+        font-size: 28px;
+        color: $black;
+        align-self: center;
+        margin-bottom: 50px;
+      }
+    }
+
+    .buttonsContainer {
+      position: relative;
+      margin-top: 30px;
+      align-self: center;
+
+      .forgetPassword {
+        position: absolute;
+        top: -60px;
+        left: 0;
+        text-align: center;
+        color: $black;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 16px;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .loginBtn {
+        border: 1px solid $darkWhite;
+        width: 300px;
+        height: 50px;
+        background-color: $yellow;
+        color: $black;
+        font-weight: 700;
+        font-size: 24px;
+        border-radius: 30px;
+      }
+    }
+  }
+}
+
+@keyframes LoginAnimation {
+  from {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}

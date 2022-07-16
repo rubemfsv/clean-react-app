@@ -1,0 +1,101 @@
+@import '../../styles/colors.scss';
+
+.sigup {
+  display: flex;
+  max-height: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+
+    @media (max-width: 1000px) {
+      max-width: 1000px;
+    }
+
+    .form {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 600px;
+      height: 600px;
+
+      animation: SignUpAnimation 1.2s;
+
+      .invertedMold {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-color: $white;
+        border-radius: 50px;
+        background-repeat: no-repeat;
+        background-size: 500px 500px;
+        transform: rotateY(180deg);
+        width: 600px;
+        height: 600px;
+      }
+
+      .title {
+        margin-top: -32px;
+        font-size: 28px;
+        color: $black;
+        align-self: center;
+        margin-bottom: 22px;
+      }
+    }
+
+    .buttonsContainer {
+      position: relative;
+      margin-top: 12px;
+      align-self: center;
+
+      .submitBtn {
+        border: 1px solid $darkWhite;
+        width: 300px;
+        height: 50px;
+        background-color: $yellow;
+        color: $black;
+        font-weight: 700;
+        font-size: 24px;
+        border-radius: 30px;
+      }
+
+      .goBack {
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        text-align: center;
+        color: $black;
+        font-weight: bold;
+        font-size: 14px;
+        margin-top: 16px;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@keyframes SignUpAnimation {
+  from {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}

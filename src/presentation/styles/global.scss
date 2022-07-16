@@ -1,0 +1,65 @@
+@import '../styles/colors.scss';
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: local('GothamMedium'),
+    url(../assets/fonts/GothamMedium.ttf) format('ttf');
+}
+
+* {
+  font-family: 'GothamMedium', sans-serif;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse !important;
+
+  tbody tr {
+    &:hover {
+      background-color: $yellowMouseHover;
+    }
+  }
+}
+
+body {
+  background-color: $yellow;
+}
+
+input[type='password'],
+input[type='email'],
+input[type='text'] {
+  border: 1px solid $darkWhite;
+  background-color: transparent;
+  line-height: 40px;
+  border-radius: 0px;
+  height: 40px;
+  width: 290px;
+  padding: 0px 40px 0px 16px;
+  color: $black;
+  outline: none;
+
+  &:focus {
+    border-color: $yellowAux;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    color: $darkWhite;
+    opacity: 0.5;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
