@@ -46,7 +46,7 @@ module.exports = merge(common, {
   plugins: [
     new DefinePlugin({
       'process.env.API_URL': JSON.stringify(
-        'http://fordevs.herokuapp.com/api'
+        'your_prod_env_url'
       ),
     }),
     new HtmlWebpackPlugin({
