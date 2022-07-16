@@ -1,6 +1,26 @@
 <center><h1>Clean React App</h1></center>
 
-It will contains three pages:
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/rubemfsv/clean-react-app)
+
+<img alt="Logo" align="right" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="20%" />
+
+Create React apps with no build configuration.
+
+- [Creating a Clean React App](#creating-an-app) – How to create a new app.
+- [User Guide](https://dev.to/rubemfsv/arquitetura-limpa-aplicando-com-react-1eo0) – How to develop apps bootstrapped with Clean React App.
+
+Clean React App works on macOS, Windows, and Linux.<br>
+If something doesn’t work, please [file an issue](https://github.com/rubemfsv/clean-react-app/issues/new).<br>
+
+## Quick Overview
+
+```sh
+npx @rubemfsv/clean-react-app my-app
+cd my-app
+npm start or npm run dev
+```
+
+This boilerplate contains three pages:
 
 - Login page
 - Sign up page
@@ -27,11 +47,11 @@ Page description
 
 **You must first have installed [NodeJS](https://nodejs.org/) in its 14.20.0 version (I recommend [nvm](https://github.com/nvm-sh/nvm) to deal with versions), [Yarn](https://yarnpkg.com/), and then:**
 
-`git clone https://github.com/WMS-Front-Tests/rubemfsv-fe-test.git`
+`git clone https://github.com/rubemfsv/clean-react-app.git`
 
 Passo 1:
 
-`cd rubemfsv-fe-test` - access the project files
+`cd clean-react-app` - access the project files
 
 Passo 2:
 
