@@ -1,7 +1,7 @@
 {
   "name": "@rubemfsv/clean-react-app",
   "author": "rubemfsv",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Clean React App",
   "main": "index.js",
   "scripts": {
