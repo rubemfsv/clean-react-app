@@ -102,29 +102,29 @@ const SignUp: React.FC<SignUpProps> = ({
             onSubmit={handleSubmit}
           >
             <div className={Styles.invertedMold} />
-            <h1 className={Styles.title}>Crie uma conta</h1>
+            <h1 className={Styles.title}>Create account</h1>
             <Input
               autoComplete="off"
-              title="Digite seu nome"
+              title="Enter your name"
               type="name"
               name="name"
             />
             <Input
               autoComplete="off"
-              title="Digite seu e-mail"
+              title="Enter your e-mail"
               type="email"
               name="email"
             />
             <Input
               autoComplete="off"
-              title="Digite sua senha"
+              title="Enter your password"
               type="password"
               name="password"
               minLength={4}
             />
             <Input
               autoComplete="off"
-              title="Digite sua senha novamente"
+              title="Enter your password again"
               type="password"
               name="passwordConfirmation"
               minLength={4}
@@ -134,7 +134,7 @@ const SignUp: React.FC<SignUpProps> = ({
               <Button
                 data-testid="forgotPasswordButton"
                 type="submit"
-                title="Enviar"
+                title="Create"
                 disabled={state.isFormInvalid}
                 className={Styles.submitBtn}
               />
@@ -144,7 +144,7 @@ const SignUp: React.FC<SignUpProps> = ({
                 to="/login"
                 className={Styles.goBack}
               >
-                Voltar
+                Back
               </Link>
             </div>
 
