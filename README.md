@@ -49,15 +49,15 @@ Page description
 
 `git clone https://github.com/rubemfsv/clean-react-app.git`
 
-Passo 1:
+Stepß 1:
 
 `cd clean-react-app` - access the project files
 
-Passo 2:
+Step 2:
 
 `yarn` (or `npm install`) - to install dependencies
 
-Passo 3:
+Step 3:
 
 `yarn dev` - to initialize the project under development
 
