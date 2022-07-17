@@ -1,11 +1,14 @@
 import React from 'react';
 
+import Styles from './styles.scss';
+
 type DashboardProps = {};
 
-const Dashboard: React.FC<DashboardProps> = ({}) => {
+const Dashboard: React.FC<DashboardProps> = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className={Styles.container}>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" />
+      <span>Start your development from here</span>
     </div>
   );
 };

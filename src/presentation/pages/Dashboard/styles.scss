@@ -1,1 +1,21 @@
 @import '../../styles/colors.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+
+  span {
+    font-size: 26px;
+    color: $black;
+    font-weight: 700;
+  }
+}
