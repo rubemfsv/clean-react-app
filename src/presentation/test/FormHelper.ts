@@ -10,19 +10,6 @@ export const populateField = (
   fireEvent.input(input, { target: { value } });
 };
 
-export const testStatusForField = (
-  fieldName: string,
-  validationError?: string
-): void => {
-  const fielStatus = screen.getByTestId(`${fieldName}Status`);
-
-  const fieldTitle = validationError ? validationError : 'Tudo certo!';
-  const fieldStatus = validationError ? '🔴' : '🟢';
-
-  expect(fielStatus.title).toBe(fieldTitle);
-  expect(fielStatus.textContent).toBe(fieldStatus);
-};
-
 export const testElementExists = (fieldName: string): void => {
   expect(screen.queryByTestId(fieldName)).toBeInTheDocument();
 };
