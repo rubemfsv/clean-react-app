@@ -58,6 +58,10 @@ Step 2:
 
 Step 3:
 
+Change your `webpack.dev.js` and `webpack.prod.js` env url to your real urls
+
+Step 4:
+
 `yarn dev` (or `npm run dev`) - to initialize the project under development
 
 Observations:
