@@ -76,18 +76,18 @@ const Login: React.FC<LoginProps> = ({
             className={Styles.form}
             onSubmit={handleSubmit}
           >
-            <h1 className={Styles.loginTitle}>Entre com sua conta</h1>
+            <h1 className={Styles.loginTitle}>Login with your account</h1>
 
             <Input
               autoComplete="off"
-              title="Digite seu e-mail"
+              title="Enter your e-mail"
               type="email"
               name="email"
             />
 
             <Input
               autoComplete="off"
-              title="Digite sua senha"
+              title="Enter your password"
               type="password"
               name="password"
               minLength={4}
@@ -97,7 +97,7 @@ const Login: React.FC<LoginProps> = ({
                 className={Styles.loginBtn}
                 type="submit"
                 disabled={state.isFormInvalid}
-                title="Entrar"
+                title="Login"
                 data-testid="loginButton"
               />
               <Link
@@ -105,7 +105,7 @@ const Login: React.FC<LoginProps> = ({
                 to="/signup"
                 className={Styles.forgetPassword}
               >
-                Criar conta
+                Create account
               </Link>
             </div>
             <FormLoaderStatus />
