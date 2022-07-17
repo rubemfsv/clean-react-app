@@ -4,9 +4,8 @@
 
 <img alt="Logo" align="right" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="20%" />
 
-Create React apps with no build configuration.
+Create React apps using [Clean Architecture](https://dev.to/rubemfsv/clean-architecture-the-concept-behind-the-code-52do) with no build configuration.
 
-- [Creating a Clean React App](#creating-an-app) – How to create a new app.
 - [User Guide](https://dev.to/rubemfsv/arquitetura-limpa-aplicando-com-react-1eo0) – How to develop apps bootstrapped with Clean React App.
 
 Clean React App works on macOS, Windows, and Linux.<br>
@@ -20,36 +19,36 @@ cd my-app
 npm start or npm run dev
 ```
 
-This boilerplate contains three pages:
+<hr />
+<br />
 
-- Login page
-- Sign up page
-- Dashboard
+**This boilerplate contains the following settings:**
+- Local storage adapter;
+- Axios as HTTP Client;
+- Webpack configured for development and production environments;
+- Basic end-to-end test settings with Cypress;
+- Unit tests with Jest;
+- Husky with pre-push to run unit tests;
+- Authentication with validations;
+- Validation layer for reuse of validations;
+- Some hooks to help with API calls and form submissions;
+- Private route configured;
+- Three pages to help improve productivity:
+  - Login page
+  - Sign up page
+  - Dashboard
 
 <hr />
 <br />
 
-🖥️ **Login page**
 
-Page description
-
-🖥️ **Sign up page**
-
-Page description
-
-🖥️ **Dashboard page**
-
-Page description
-
-<br />
-
-:construction_worker: **Installation**
+## :construction_worker:  **Installation**
 
 **You must first have installed [NodeJS](https://nodejs.org/) in its 14.20.0 version (I recommend [nvm](https://github.com/nvm-sh/nvm) to deal with versions), [Yarn](https://yarnpkg.com/), and then:**
 
 `git clone https://github.com/rubemfsv/clean-react-app.git`
 
-Stepß 1:
+Step 1:
 
 `cd clean-react-app` - access the project files
 
@@ -59,21 +58,22 @@ Step 2:
 
 Step 3:
 
-`yarn dev` - to initialize the project under development
+`yarn dev` (or `npm run dev`) - to initialize the project under development
 
 Observations:
 
-`yarn test` - to run jest unit testing
+`yarn test` (or `npm run test`) - to run jest unit testing
 
-`yarn test:e2e` - to run cypress e2e testing (if you use linux or windows, the command may change because of the \, but you can change the script or run it by `node_modules/.bin/cypress open`)
+`yarn test:e2e` (or `npm run test:e2e`) - to run cypress e2e testing (if you use linux or windows, the command may change because of the \, but you can change the script or run it by `node_modules/.bin/cypress open`)
 
-`yarn start` - to initialize the project under production webpack;
+`yarn start` (or `npm start`) - to initialize the project under production webpack;
 
 In the package.json file, there are scripts that you can run with node and yarn
 
+<hr />
 <br />
 
-:open_file_folder: **Architecture**
+## :open_file_folder: **Architecture**
 
 The architecture used in this project was the [Clean Architecture](https://dev.to/rubemfsv/clean-architecture-the-concept-behind-the-code-52do), using the concepts proposed by Roberto Martin. To know how to implement this architecture, there is an [article applying this Architecture with React](https://dev.to/rubemfsv/arquitetura-limpa-aplicando-com-react-1eo0) that describes very well the thought line.
 
@@ -126,5 +126,40 @@ src/
 ```
 <br />
 
+🖥️  **Login page**
 
+It's a simple login page with a form and error handling. It already has input, button, field and loader components.
+
+![Login page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vyruv5eroc1eb5p7ferj.png)
+
+
+🖥️  **Sign up page**
+
+It is a registration page with a form that receives the username, email, password and password confirmation. It already has error handling and reused components.
+
+![Sign up page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r3ua2l7ybbsd9f06m57t.png)
+
+🖥️  **Dashboard page**
+
+It is an empty page that is redirected after successful login. It's there to help with development, saving time by being the starting point.
+
+![Dashboard page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fxpg1sfmkt1dkfv12pbm.png)
+
+<hr />
+<br />
+
+## :bookmark_tabs: Branches and contributions
+
+As this project is intended to be open source and free for everyone to use, feel free to contribute improvements.
+
+If something can be improved, just create a branch from `main` and make a Pull Request with the suggestions.
+
+<hr />
+<br />
+
+## :bug: Issues
+
+If something doesn’t work, please [file an issue](https://github.com/rubemfsv/clean-react-app/issues/new).
+
+<br>
 
