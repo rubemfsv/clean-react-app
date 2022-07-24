@@ -9,7 +9,7 @@
 
 Create React apps using [Clean Architecture](https://dev.to/rubemfsv/clean-architecture-the-concept-behind-the-code-52do) with no build configuration.
 
-- [User Guide](https://dev.to/rubemfsv/arquitetura-limpa-aplicando-com-react-1eo0) – How to develop apps bootstrapped with Clean React App.
+- [User Guide](https://dev.to/rubemfsv/clean-architecture-applying-with-react-40h6) – How to develop apps bootstrapped with Clean React App.
 
 Clean React App works on macOS, Windows, and Linux.<br>
 If something doesn’t work, please [file an issue](https://github.com/rubemfsv/clean-react-app/issues/new).<br>

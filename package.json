@@ -1,9 +1,16 @@
 {
   "name": "@rubemfsv/clean-react-app",
   "author": "rubemfsv",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Clean React App",
   "main": "index.js",
+  "keywords": [
+    "React",
+    "Clean Architecture",
+    "Typescript",
+    "Webpack",
+    "Clean React App"
+  ],
   "scripts": {
     "start": "node index",
     "dev:base": "webpack-dev-server --config webpack.dev.js",
