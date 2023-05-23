@@ -64,7 +64,6 @@
     "jest-localstorage-mock": "^2.4.6",
     "mini-css-extract-plugin": "^1.3.4",
     "netlify-webpack-plugin": "^1.1.1",
-    "node-sass": "^5.0.0",
     "react-hooks-helper": "^1.6.0",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
@@ -75,7 +74,8 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.7.3"
+    "webpack-merge": "^5.7.3",
+    "sass": "^1.62.1"
   },
   "dependencies": {
     "axios": "^0.21.1",
