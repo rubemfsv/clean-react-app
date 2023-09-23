@@ -2,7 +2,7 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)](https://github.com/rubemfsv/clean-react-app)
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
-![Node Version](https://img.shields.io/static/v1?label=node&message=18.18.0.0&color=00579d)
+![Node Version](https://img.shields.io/static/v1?label=node&message=18.18.0&color=00579d)
 ![React Version](https://img.shields.io/static/v1?label=react&message=18.2.0&color=42a5f5)
 
 <img alt="Logo" align="right" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="20%" />
