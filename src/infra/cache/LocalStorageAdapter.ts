@@ -1,5 +1,4 @@
-import { IGetStorage } from '@/data/protocols/cache/getStorage';
-import { ISetStorage } from '@/data/protocols/cache/SetStorage';
+import { IGetStorage, ISetStorage } from '@/data/protocols/cache/';
 
 export class LocalStorageAdapter implements ISetStorage, IGetStorage {
   set(key: string, value: object): void {
