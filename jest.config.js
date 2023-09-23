@@ -13,7 +13,7 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   setupFilesAfterEnv: ['<rootDir>/src/main/scripts/jestSetup.ts'],
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   transform: {
     '.+\\.(ts|tsx)$': 'ts-jest',
   },
