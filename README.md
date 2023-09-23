@@ -47,7 +47,7 @@ npm start or npm run dev
 
 ## :construction_worker:  **Installation**
 
-**You must first have installed [NodeJS](https://nodejs.org/) in its 14.20.0 version (I recommend [nvm](https://github.com/nvm-sh/nvm) to deal with versions), [Yarn](https://yarnpkg.com/), and then:**
+**You must first have installed [NodeJS](https://nodejs.org/) (I recommend [nvm](https://github.com/nvm-sh/nvm) to deal with versions), [Yarn](https://yarnpkg.com/), and then:**
 
 `git clone https://github.com/rubemfsv/clean-react-app.git`
 
