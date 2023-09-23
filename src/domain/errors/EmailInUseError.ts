@@ -1,6 +1,6 @@
 export class EmailInUseError extends Error {
   constructor() {
-    super('Esse email já está em uso');
+    super('This email is already in use');
     this.name = 'EmailInUseError';
   }
 }
