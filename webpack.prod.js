@@ -11,12 +11,16 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.ts(x?)$/,
-        loader: 'ts-loader',
         exclude: /node_modules/,
+        use:{
+          loader: 'ts-loader',
+        }
       },
       {
         test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=100000',
+        use:{
+          loader: 'url-loader?limit=100000',
+        }
       },
       {
         test: /\.(css|scss)$/,
@@ -53,7 +57,7 @@ module.exports = merge(common, {
       template: './template.prod.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'main-bundle-[hash].css',
+      filename: 'main-bundle-[fullhash].css',
     }),
 
     new NetlifyPlugin({
