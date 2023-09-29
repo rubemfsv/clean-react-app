@@ -12,7 +12,7 @@ Please describe the Feature in detail.
 
 **Expected Behavior**
 
-What happens instead?
+What should happen?
 
 **Screenshots (if applicable)**
 
