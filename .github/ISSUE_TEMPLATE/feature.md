@@ -12,10 +12,6 @@ Please describe the Feature in detail.
 
 **Expected Behavior**
 
-What should happen?
-
-**Actual Behavior**
-
 What happens instead?
 
 **Screenshots (if applicable)**
