@@ -1,6 +1,6 @@
 ---
 name: 💡General Feature Request
-about: Have a new idea/feature for Image-Searcher? Please suggest!
+about: Have a new idea/feature for Clean-React-App? Please suggest!
 title: '[FEATURE] <description>'
 labels: []
 assignees: []
