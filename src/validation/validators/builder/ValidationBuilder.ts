@@ -1,10 +1,11 @@
-import { IFieldValidation } from '@/validation/protocols';
+import { IFieldValidation } from "@/validation/protocols";
 import {
   CompareFieldsValidation,
   RequiredFieldValidation,
   EmailFieldValidation,
   MinLengthValidation,
-} from '@/validation/validators';
+} from "@/validation/validators";
+import { MatchFieldValidation } from "../matchField/MatchFieldValidation";
 
 export class ValidationBuilder {
   private constructor(
@@ -32,7 +33,20 @@ export class ValidationBuilder {
   }
 
   sameAs(fieldToCompare: string): ValidationBuilder {
-    this.validations.push(new CompareFieldsValidation(this.fieldName, fieldToCompare));
+    this.validations.push(
+      new CompareFieldsValidation(this.fieldName, fieldToCompare)
+    );
+    return this;
+  }
+
+  match(
+    pattern: RegExp,
+    ignoreCase: boolean = false,
+    message?: string
+  ): ValidationBuilder {
+    this.validations.push(
+      new MatchFieldValidation(this.fieldName, pattern, ignoreCase, message)
+    );
     return this;
   }
 
