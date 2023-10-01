@@ -155,6 +155,12 @@ It is an empty page that is redirected after successful login. It's there to hel
 <hr />
 <br />
 
+## :bug: Issues
+
+If something doesn’t work, please [file an issue](https://github.com/rubemfsv/clean-react-app/issues/new).
+
+<br>
+
 ## :bookmark_tabs: Branches and contributions
 
 As this project is intended to be open source and free for everyone to use, feel free to contribute improvements.
@@ -164,9 +170,13 @@ If something can be improved, just create a branch from `main` and make a Pull R
 <hr />
 <br />
 
-## :bug: Issues
 
-If something doesn’t work, please [file an issue](https://github.com/rubemfsv/clean-react-app/issues/new).
+## Contributors
 
-<br>
+Meet the talented individuals who have contributed to Clean React App project:  
+
+
+<a href="https://github.com/rubemfsv/clean-react-app/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=rubemfsv/clean-react-app" />
+</a>
 
