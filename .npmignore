@@ -1,0 +1,14 @@
+# Ignore the directory
+.github/
+
+# Ignore all .md files
+*.md
+
+# Ignore all .log files
+*.log
+
+# Ignore Cypress files
+cypress/
+
+# Ignore environment configuration files
+.env
