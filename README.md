@@ -159,7 +159,8 @@ It is an empty page that is redirected after successful login. It's there to hel
 
 If something doesn’t work, please [file an issue](https://github.com/rubemfsv/clean-react-app/issues/new).
 
-<br>
+<hr />
+<br />
 
 ## :bookmark_tabs: Branches and contributions
 
