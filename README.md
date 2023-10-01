@@ -162,6 +162,12 @@ If something doesn’t work, please [file an issue](https://github.com/rubemfsv/
 <hr />
 <br />
 
+## 📜 Code of Conduct
+
+We are committed to providing a welcoming and safe environment in our community. All contributors, maintainers, and everyone participating in this project are expected to adhere to our Code of Conduct. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+<hr />
+<br />
+
 ## :bookmark_tabs: Branches and contributions
 
 As this project is intended to be open source and free for everyone to use, feel free to contribute improvements.
@@ -171,7 +177,6 @@ If something can be improved, just create a branch from `main` and make a Pull R
 <hr />
 <br />
 
-
 ## Contributors
 
 Meet the talented individuals who have contributed to Clean React App project:  
@@ -180,7 +185,3 @@ Meet the talented individuals who have contributed to Clean React App project:
 <a href="https://github.com/rubemfsv/clean-react-app/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=rubemfsv/clean-react-app" />
 </a>
-
-## 📜 Code of Conduct
-
-We are committed to providing a welcoming and safe environment in our community. All contributors, maintainers, and everyone participating in this project are expected to adhere to our Code of Conduct. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
