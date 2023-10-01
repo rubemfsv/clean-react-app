@@ -181,6 +181,6 @@ Meet the talented individuals who have contributed to Clean React App project:
   <img src="https://contrib.rocks/image?repo=rubemfsv/clean-react-app" />
 </a>
 
-## Code of conduct 
+## 📜 Code of Conduct
 
-Please, before contributing, check our code of conduct, you can access it by [clicking here](https://github.com/rubemfsv/clean-react-app/CODE_OF_CONDUCT.md).
+We are committed to providing a welcoming and safe environment in our community. All contributors, maintainers, and everyone participating in this project are expected to adhere to our Code of Conduct. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
