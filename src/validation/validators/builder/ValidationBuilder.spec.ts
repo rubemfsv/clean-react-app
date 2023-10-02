@@ -61,12 +61,14 @@ describe('ValidationBuilder', () => {
     const fieldToCompare = faker.database.column();
     const minLength = faker.datatype.number();
     const maxLength = minLength + faker.datatype.number();
+    const DIGITS_REGEX = /^[0-9]*$/
     const validations = ValidationBuilder.field(field)
       .required()
       .min(minLength)
       .max(maxLength)
       .sameAs(fieldToCompare)
       .email()
+      .match(DIGITS_REGEX)
       .build();
     expect(validations).toEqual([
       new RequiredFieldValidation(field),
@@ -74,6 +76,7 @@ describe('ValidationBuilder', () => {
       new MaxLengthValidation(field, maxLength),
       new CompareFieldsValidation(field, fieldToCompare),
       new EmailFieldValidation(field),
+      new MatchFieldValidation(field, DIGITS_REGEX, false)
     ]);
   });
 });

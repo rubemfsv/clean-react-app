@@ -1,5 +1,5 @@
-import { MatchFieldError } from "@/validation/errors/MatchFieldError";
-import { MatchFieldValidation } from "./MatchFieldValidation";
+import { MatchFieldError } from '@/validation/errors';
+import { MatchFieldValidation } from './MatchFieldValidation';
 import faker from "faker";
 
 const ONLY_DIGITS_REGEX = /^[0-9]*$/;
