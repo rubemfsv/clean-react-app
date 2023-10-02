@@ -1,11 +1,11 @@
-import { IFieldValidation } from "@/validation/protocols";
+import { IFieldValidation } from '@/validation/protocols';
 import {
   CompareFieldsValidation,
   RequiredFieldValidation,
   EmailFieldValidation,
   MinLengthValidation,
-} from "@/validation/validators";
-import { MatchFieldValidation } from "../matchField/MatchFieldValidation";
+  MatchFieldValidation
+} from '@/validation/validators';
 
 export class ValidationBuilder {
   private constructor(

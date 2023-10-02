@@ -4,3 +4,4 @@ export * from './emailField/EmailFieldValidation';
 export * from './minLength/MinLengthValidation';
 export * from './requiredField/RequiredFieldValidation';
 export * from './validationComposite/ValidationComposite';
+export * from './matchField/MatchFieldValidation';

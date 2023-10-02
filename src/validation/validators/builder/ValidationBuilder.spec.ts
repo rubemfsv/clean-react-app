@@ -3,6 +3,7 @@ import {
   RequiredFieldValidation,
   EmailFieldValidation,
   MinLengthValidation,
+  MatchFieldValidation
 } from '@/validation/validators';
 import { ValidationBuilder } from './ValidationBuilder';
 import faker from 'faker';
@@ -37,6 +38,15 @@ describe('ValidationBuilder', () => {
       new CompareFieldsValidation(field, fieldToCompare),
     ]);
   });
+
+  test('Should return MatchFieldValidation', () => {
+    const field = faker.database.column()
+    const validations = ValidationBuilder.field(field).match(/^[0-9]*$/, false).build()
+
+    expect(validations).toEqual([
+      new MatchFieldValidation(field, /^[0-9]*$/, false)
+    ])
+  })
 
   test('Should return a list of validations ', () => {
     const field = faker.database.column();

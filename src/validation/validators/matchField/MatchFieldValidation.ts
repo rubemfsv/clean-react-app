@@ -1,5 +1,5 @@
-import { MatchFieldError } from "@/validation/errors/MatchFieldError";
-import { IFieldValidation } from "@/validation/protocols";
+import { MatchFieldError } from '@/validation/errors/MatchFieldError';
+import { IFieldValidation } from '@/validation/protocols';
 
 export class MatchFieldValidation implements IFieldValidation {
   constructor(
