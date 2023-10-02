@@ -4,7 +4,8 @@ import {
   RequiredFieldValidation,
   EmailFieldValidation,
   MinLengthValidation,
-  MatchFieldValidation
+  MatchFieldValidation,
+  MaxLengthValidation
 } from '@/validation/validators';
 
 export class ValidationBuilder {
@@ -32,8 +33,14 @@ export class ValidationBuilder {
     return this;
   }
 
+  max(length: number): ValidationBuilder {
+    this.validations.push(new MaxLengthValidation(this.fieldName, length));
+    return this;
+  }
+
   sameAs(fieldToCompare: string): ValidationBuilder {
     this.validations.push(
+      
       new CompareFieldsValidation(this.fieldName, fieldToCompare)
     );
     return this;
@@ -46,6 +53,7 @@ export class ValidationBuilder {
   ): ValidationBuilder {
     this.validations.push(
       new MatchFieldValidation(this.fieldName, pattern, ignoreCase, message)
+    
     );
     return this;
   }

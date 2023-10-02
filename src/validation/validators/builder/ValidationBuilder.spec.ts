@@ -3,7 +3,8 @@ import {
   RequiredFieldValidation,
   EmailFieldValidation,
   MinLengthValidation,
-  MatchFieldValidation
+  MatchFieldValidation,
+  MaxLengthValidation
 } from '@/validation/validators';
 import { ValidationBuilder } from './ValidationBuilder';
 import faker from 'faker';
@@ -26,6 +27,13 @@ describe('ValidationBuilder', () => {
     const length = faker.datatype.number();
     const validations = ValidationBuilder.field(field).min(length).build();
     expect(validations).toEqual([new MinLengthValidation(field, length)]);
+  });
+
+  test('Should return MaxLengthValidation ', () => {
+    const field = faker.database.column();
+    const length = faker.datatype.number();
+    const validations = ValidationBuilder.field(field).max(length).build();
+    expect(validations).toEqual([new MaxLengthValidation(field, length)]);
   });
 
   test('Should return CompareFieldsValidation ', () => {
@@ -51,16 +59,19 @@ describe('ValidationBuilder', () => {
   test('Should return a list of validations ', () => {
     const field = faker.database.column();
     const fieldToCompare = faker.database.column();
-    const length = faker.datatype.number();
+    const minLength = faker.datatype.number();
+    const maxLength = minLength + faker.datatype.number();
     const validations = ValidationBuilder.field(field)
       .required()
-      .min(length)
+      .min(minLength)
+      .max(maxLength)
       .sameAs(fieldToCompare)
       .email()
       .build();
     expect(validations).toEqual([
       new RequiredFieldValidation(field),
-      new MinLengthValidation(field, length),
+      new MinLengthValidation(field, minLength),
+      new MaxLengthValidation(field, maxLength),
       new CompareFieldsValidation(field, fieldToCompare),
       new EmailFieldValidation(field),
     ]);
