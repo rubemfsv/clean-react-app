@@ -17,13 +17,13 @@
   "scripts": {
     "start": "node index",
     "dev:base": "webpack-dev-server --config webpack.dev.js",
-    "dev": "yarn dev:base -- --open",
+    "dev": "npm run dev:base -- --open",
     "build": "webpack --config webpack.prod.js",
     "test": "jest --passWithNoTests --no-cache --runInBand",
-    "test:watch": "yarn test -- --watch",
+    "test:watch": "npm test -- --watch",
     "test:e2e": "node_modules/.bin/cypress open",
     "postinstall": "npx husky install"
-  },
+  },  
   "bin": "./src/main/scripts/bin.js",
   "repository": "https://github.com/rubemfsv/clean-react-app.git",
   "license": "ISC",
