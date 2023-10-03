@@ -1,3 +1,3 @@
-export * as FormHelper from './FormHelper';
-export * from './MockAuthentication';
-export * from './MockValidation';
+export * as FormHelper from './FormHelper'
+export * from './MockAuthentication'
+export * from './MockValidation'

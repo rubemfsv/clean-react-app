@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import Styles from './styles.scss';
+import Styles from './styles.scss'
 
 type Props = React.HTMLAttributes<HTMLElement> & {
-  isNegative?: boolean;
-  'data-testid'?: string;
-};
+  isNegative?: boolean
+  'data-testid'?: string
+}
 
 const Spinner: React.FC<Props> = (props: Props) => {
   return (
@@ -19,7 +19,7 @@ const Spinner: React.FC<Props> = (props: Props) => {
       <div />
       <div />
     </div>
-  );
-};
+  )
+}
 
-export default Spinner;
+export default Spinner

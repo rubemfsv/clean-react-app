@@ -1,23 +1,23 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import Context from '@/presentation/hooks/form';
-import { Button, Input, FormLoaderStatus } from '@/presentation/components/';
-import { IValidation } from '@/presentation/protocols/validation';
-import { IAddAccount } from '@/domain/usecases';
-import Styles from './styles.scss';
-import { ApiContext } from '@/presentation/hooks';
+import React, { useCallback, useContext, useEffect, useState } from 'react'
+import { useHistory, Link } from 'react-router-dom'
+import Context from '@/presentation/hooks/form'
+import { Button, Input, FormLoaderStatus } from '@/presentation/components/'
+import { IValidation } from '@/presentation/protocols/validation'
+import { IAddAccount } from '@/domain/usecases'
+import Styles from './styles.scss'
+import { ApiContext } from '@/presentation/hooks'
 
 type SignUpProps = {
-  validation: IValidation;
-  addAccount: IAddAccount;
-};
+  validation: IValidation
+  addAccount: IAddAccount
+}
 
 const SignUp: React.FC<SignUpProps> = ({
   validation,
   addAccount,
 }: SignUpProps) => {
-  const { setCurrentAccount } = useContext(ApiContext);
-  const history = useHistory();
+  const { setCurrentAccount } = useContext(ApiContext)
+  const history = useHistory()
   const [state, setState] = useState({
     isLoading: false,
     isFormInvalid: true,
@@ -30,23 +30,23 @@ const SignUp: React.FC<SignUpProps> = ({
     passwordError: '',
     passwordConfirmationError: '',
     mainError: '',
-  });
+  })
 
   useEffect(() => {
-    const { email, name, password, passwordConfirmation } = state;
+    const { email, name, password, passwordConfirmation } = state
     const formData = {
       email,
       name,
       password,
       passwordConfirmation,
-    };
-    const emailError = validation.validate('email', formData);
-    const nameError = validation.validate('name', formData);
-    const passwordError = validation.validate('password', formData);
+    }
+    const emailError = validation.validate('email', formData)
+    const nameError = validation.validate('name', formData)
+    const passwordError = validation.validate('password', formData)
     const passwordConfirmationError = validation.validate(
       'passwordConfirmation',
       formData
-    );
+    )
 
     setState({
       ...state,
@@ -59,38 +59,38 @@ const SignUp: React.FC<SignUpProps> = ({
         !!nameError ||
         !!passwordError ||
         !!passwordConfirmationError,
-    });
-  }, [state.email, state.name, state.password, state.passwordConfirmation]);
+    })
+  }, [state.email, state.name, state.password, state.passwordConfirmation])
 
   const handleSubmit = async (
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
-    event.preventDefault();
+    event.preventDefault()
     try {
       if (state.isLoading || state.isFormInvalid) {
-        return;
+        return
       }
       setState({
         ...state,
         isLoading: true,
-      });
+      })
       let account = await addAccount.add({
         email: state.email,
         name: state.name,
         password: state.password,
         passwordConfirmation: state.passwordConfirmation,
-      });
+      })
 
-      setCurrentAccount(account);
-      history.replace('/');
+      setCurrentAccount(account)
+      history.replace('/')
     } catch (error) {
       setState({
         ...state,
         isLoading: false,
         mainError: error.message,
-      });
+      })
     }
-  };
+  }
 
   return (
     <div className={Styles.sigup}>
@@ -153,7 +153,7 @@ const SignUp: React.FC<SignUpProps> = ({
         </Context.Provider>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SignUp;
+export default SignUp

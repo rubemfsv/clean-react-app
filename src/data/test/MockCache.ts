@@ -1,10 +1,10 @@
-import { IGetStorage } from '../protocols/cache';
+import { IGetStorage } from '../protocols/cache'
 export class GetStorageSpy implements IGetStorage {
-  key: string;
-  value: any;
+  key: string
+  value: any
   get(key: string): any {
-    this.key = key;
+    this.key = key
 
-    return this.value;
+    return this.value
   }
 }

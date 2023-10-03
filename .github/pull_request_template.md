@@ -16,7 +16,7 @@ Our changelog is automatically built from our commit history, using conventional
 - commit messages with the prefix `fix:` or `fix(foo):` are suitable to be added to the changelog under "Fixes and improvements"
 - commit messages with the prefix `feat:` or `feat(foo):` are suitable to be added to the changelog under "New features"
 
-If you've made many commits that don't adhere to this style, we recommend squashing 
+If you've made many commits that don't adhere to this style, we recommend squashing
 your commits to a new branch before making a PR. Alternatively, we can do a squash
 merge, but you'll lose attribution for your change.
 

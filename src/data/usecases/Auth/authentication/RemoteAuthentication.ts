@@ -1,6 +1,6 @@
-import { IHttpClient, HttpStatusCode } from '@/data/protocols/http';
-import { UnexpectedError, InvalidCredentialsError } from '@/domain/errors';
-import { IAuthentication, Authentication } from '@/domain/usecases';
+import { IHttpClient, HttpStatusCode } from '@/data/protocols/http'
+import { UnexpectedError, InvalidCredentialsError } from '@/domain/errors'
+import { IAuthentication, Authentication } from '@/domain/usecases'
 
 export class RemoteAuthentication implements IAuthentication {
   constructor(
@@ -15,19 +15,19 @@ export class RemoteAuthentication implements IAuthentication {
       url: this.url,
       method: 'post',
       body: params,
-    });
+    })
 
     switch (httpResponse.statusCode) {
       case HttpStatusCode.ok:
-        return httpResponse.body;
+        return httpResponse.body
       case HttpStatusCode.unauthorized:
-        throw new InvalidCredentialsError();
+        throw new InvalidCredentialsError()
       default:
-        throw new UnexpectedError();
+        throw new UnexpectedError()
     }
   }
 }
 
 export namespace RemoteAuthenticationamespace {
-  export type Model = Authentication.Model;
+  export type Model = Authentication.Model
 }

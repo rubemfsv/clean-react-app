@@ -1,5 +1,5 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/main/index.tsx',
@@ -10,10 +10,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.scss'],
     alias: {
-      '@': path.join(__dirname, 'src')
-    }
+      '@': path.join(__dirname, 'src'),
+    },
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-  ],
-};
+  plugins: [new CleanWebpackPlugin()],
+}
