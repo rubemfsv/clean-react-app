@@ -1,6 +1,8 @@
+import { ValidationErrorMessagesEnum, ValidationErrorNamesEnum } from '../enums';
+
 export class RequiredFieldError extends Error {
   constructor() {
-    super('Required field');
-    this.name = 'RequiredFieldError';
+    super(ValidationErrorMessagesEnum.RequiredFieldError);
+    this.name = ValidationErrorNamesEnum.RequiredFieldError;
   }
 }

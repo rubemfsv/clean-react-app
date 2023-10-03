@@ -1,6 +1,8 @@
+import { DomainErrorMessagesEnum, DomainErrorNamesEnum } from '../enums';
+
 export class InvalidCredentialsError extends Error {
   constructor() {
-    super('Invalid credentials');
-    this.name = 'InvalidCredentialsError';
+    super(DomainErrorMessagesEnum.InvalidCredentialsError);
+    this.name = DomainErrorNamesEnum.InvalidCredentialsError;
   }
 }
