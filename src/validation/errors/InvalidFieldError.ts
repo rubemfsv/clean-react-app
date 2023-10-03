@@ -1,5 +1,7 @@
+import { DomainErrorMessagesEnum } from "../enums";
+
 export class InvalidFieldError extends Error {
   constructor() {
-    super('Invalid value');
+    super(DomainErrorMessagesEnum.InvalidFieldError);
   }
 }
