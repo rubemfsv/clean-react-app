@@ -3,7 +3,8 @@ import { Link, useHistory } from 'react-router-dom'
 import { ApiContext, FormContext } from '@/presentation/hooks'
 import { IValidation } from '@/presentation/protocols/validation'
 import { IAuthentication } from '@/domain/usecases'
-import { Button, Input, FormLoaderStatus } from '@/presentation/components/'
+import {  FormLoaderStatus } from '@/presentation/components/'
+import {Button, Input} from '@/ui/components'
 import Styles from './styles.scss'
 
 type LoginProps = {

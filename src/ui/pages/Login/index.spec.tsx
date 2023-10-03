@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { fireEvent, render, waitFor, screen } from '@testing-library/react'
 import faker from 'faker'
-import { Login } from '@/presentation/pages'
+import { Login } from '@/ui/pages'
 import {
   AuthenticationSpy,
   ValidationStub,
