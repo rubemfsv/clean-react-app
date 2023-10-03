@@ -3,7 +3,8 @@ import {
   RequiredFieldValidation,
   EmailFieldValidation,
   MinLengthValidation,
-  MaxLengthValidation,
+  MatchFieldValidation,
+  MaxLengthValidation
 } from '@/validation/validators';
 import { ValidationBuilder } from './ValidationBuilder';
 import faker from 'faker';
@@ -46,17 +47,28 @@ describe('ValidationBuilder', () => {
     ]);
   });
 
+  test('Should return MatchFieldValidation', () => {
+    const field = faker.database.column()
+    const validations = ValidationBuilder.field(field).match(/^[0-9]*$/, false).build()
+
+    expect(validations).toEqual([
+      new MatchFieldValidation(field, /^[0-9]*$/, false)
+    ])
+  })
+
   test('Should return a list of validations ', () => {
     const field = faker.database.column();
     const fieldToCompare = faker.database.column();
     const minLength = faker.datatype.number();
     const maxLength = minLength + faker.datatype.number();
+    const DIGITS_REGEX = /^[0-9]*$/
     const validations = ValidationBuilder.field(field)
       .required()
       .min(minLength)
       .max(maxLength)
       .sameAs(fieldToCompare)
       .email()
+      .match(DIGITS_REGEX)
       .build();
     expect(validations).toEqual([
       new RequiredFieldValidation(field),
@@ -64,6 +76,7 @@ describe('ValidationBuilder', () => {
       new MaxLengthValidation(field, maxLength),
       new CompareFieldsValidation(field, fieldToCompare),
       new EmailFieldValidation(field),
+      new MatchFieldValidation(field, DIGITS_REGEX, false)
     ]);
   });
 });

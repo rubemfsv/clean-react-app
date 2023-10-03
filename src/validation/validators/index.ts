@@ -5,3 +5,4 @@ export * from './minLength/MinLengthValidation';
 export * from './maxLength/MaxLengthValidation';
 export * from './requiredField/RequiredFieldValidation';
 export * from './validationComposite/ValidationComposite';
+export * from './matchField/MatchFieldValidation';
