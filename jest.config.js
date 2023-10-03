@@ -24,4 +24,4 @@ module.exports = {
       '<rootDir>/src/main/scripts/assetsTransformer.ts',
     '\\.(css|less)$': '<rootDir>/src/main/scripts/assetsTransformer.ts',
   },
-};
+}

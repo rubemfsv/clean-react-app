@@ -1,3 +1,3 @@
 export interface ISetStorage {
-  set: (key: string, value: object) => void;
+  set: (key: string, value: object) => void
 }

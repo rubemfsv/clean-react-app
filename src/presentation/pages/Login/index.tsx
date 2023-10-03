@@ -1,22 +1,22 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { ApiContext, FormContext } from '@/presentation/hooks';
-import { IValidation } from '@/presentation/protocols/validation';
-import { IAuthentication } from '@/domain/usecases';
-import { Button, Input, FormLoaderStatus } from '@/presentation/components/';
-import Styles from './styles.scss';
+import React, { useState, useEffect, useContext } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { ApiContext, FormContext } from '@/presentation/hooks'
+import { IValidation } from '@/presentation/protocols/validation'
+import { IAuthentication } from '@/domain/usecases'
+import { Button, Input, FormLoaderStatus } from '@/presentation/components/'
+import Styles from './styles.scss'
 
 type LoginProps = {
-  validation: IValidation;
-  authentication: IAuthentication;
-};
+  validation: IValidation
+  authentication: IAuthentication
+}
 
 const Login: React.FC<LoginProps> = ({
   validation,
   authentication,
 }: LoginProps) => {
-  const { setCurrentAccount } = useContext(ApiContext);
-  const history = useHistory();
+  const { setCurrentAccount } = useContext(ApiContext)
+  const history = useHistory()
   const [state, setState] = useState({
     isLoading: false,
     isFormInvalid: true,
@@ -25,47 +25,47 @@ const Login: React.FC<LoginProps> = ({
     emailError: '',
     passwordError: '',
     mainError: '',
-  });
+  })
 
   useEffect(() => {
-    const { email, password } = state;
-    const formData = { email, password };
-    const emailError = validation.validate('email', formData);
-    const passwordError = validation.validate('password', formData);
+    const { email, password } = state
+    const formData = { email, password }
+    const emailError = validation.validate('email', formData)
+    const passwordError = validation.validate('password', formData)
 
     setState({
       ...state,
       emailError,
       passwordError,
       isFormInvalid: !!emailError || !!passwordError,
-    });
-  }, [state.email, state.password]);
+    })
+  }, [state.email, state.password])
 
   const handleSubmit = async (
     event: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
-    event.preventDefault();
+    event.preventDefault()
     try {
       if (state.isLoading || state.isFormInvalid) {
-        return;
+        return
       }
-      setState({ ...state, isLoading: true });
+      setState({ ...state, isLoading: true })
 
       const account = await authentication.auth({
         email: state.email,
         password: state.password,
-      });
+      })
 
-      setCurrentAccount(account);
-      history.replace('/');
+      setCurrentAccount(account)
+      history.replace('/')
     } catch (error) {
       setState({
         ...state,
         isLoading: false,
         mainError: error.message,
-      });
+      })
     }
-  };
+  }
 
   return (
     <div className={Styles.login}>
@@ -113,7 +113,7 @@ const Login: React.FC<LoginProps> = ({
         </FormContext.Provider>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

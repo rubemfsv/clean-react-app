@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-import Styles from './styles.scss';
+import Styles from './styles.scss'
 
 interface IButtonProps
   extends React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  title: string;
-  'data-testid'?: string;
+  title: string
+  'data-testid'?: string
 }
 
 const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
@@ -20,7 +20,7 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
     >
       {props.title}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

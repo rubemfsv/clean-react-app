@@ -1,5 +1,5 @@
 // Auth
-export * from './Auth/RemoteAuthentication';
+export * from './Auth/RemoteAuthentication'
 
 // User
-export * from './User/RemoteAddAccount';
+export * from './User/RemoteAddAccount'

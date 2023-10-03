@@ -1,7 +1,7 @@
-const { DefinePlugin } = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common');
+const { DefinePlugin } = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { merge } = require('webpack-merge')
+const common = require('./webpack.common')
 
 module.exports = merge(common, {
   mode: 'development',
@@ -10,15 +10,15 @@ module.exports = merge(common, {
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use:{
+        use: {
           loader: 'ts-loader',
-        }
+        },
       },
       {
         test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
-        use:{
+        use: {
           loader: 'url-loader?limit=100000',
-        }
+        },
       },
       {
         test: /\.(css|scss)$/,
@@ -57,4 +57,4 @@ module.exports = merge(common, {
       template: './template.dev.html',
     }),
   ],
-});
+})

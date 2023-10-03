@@ -1,4 +1,3 @@
-export * from './MockAuthentication';
-export * from './MockAccount';
-export * from './MockAddAccount';
-
+export * from './MockAuthentication'
+export * from './MockAccount'
+export * from './MockAddAccount'

@@ -1,4 +1,4 @@
-import { defineConfig } from "cypress";
+import { defineConfig } from 'cypress'
 
 export default defineConfig({
   chromeWebSecurity: false,
@@ -6,10 +6,10 @@ export default defineConfig({
   viewportHeight: 660,
 
   env: {
-    baseUrl: "http://localhost:8081",
+    baseUrl: 'http://localhost:8081',
     user: {
-      login: "test@test.com",
-      password: "12345",
+      login: 'test@test.com',
+      password: '12345',
     },
   },
 
@@ -25,4 +25,4 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
-});
+})

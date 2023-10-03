@@ -1,14 +1,14 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { makeLogin, makeDashboard, makeSignup } from '@/main/factories/pages';
-import PrivateRoute from '@/presentation/Routes/private.routes';
-import { ApiContext } from '@/presentation/hooks';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { makeLogin, makeDashboard, makeSignup } from '@/main/factories/pages'
+import PrivateRoute from '@/presentation/Routes/private.routes'
+import { ApiContext } from '@/presentation/hooks'
 import {
   getCurrentAccountAdapter,
   setCurrentAccountAdapter,
-} from '../adapters/CurrentAccountAdapter';
+} from '../adapters/CurrentAccountAdapter'
 
-import '@/presentation/styles/global.scss';
+import '@/presentation/styles/global.scss'
 
 const Router: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const Router: React.FC = () => {
         </Switch>
       </BrowserRouter>
     </ApiContext.Provider>
-  );
-};
+  )
+}
 
-export default Router;
+export default Router

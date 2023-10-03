@@ -1,5 +1,5 @@
-import { IHttpClient, HttpRequest, HttpResponse } from '@/data/protocols/http';
-import { IGetStorage } from '@/data/protocols/cache/getStorage';
+import { IHttpClient, HttpRequest, HttpResponse } from '@/data/protocols/http'
+import { IGetStorage } from '@/data/protocols/cache/getStorage'
 
 export class AuthorizeHttpClientDecorator implements IHttpClient {
   constructor(
@@ -8,15 +8,15 @@ export class AuthorizeHttpClientDecorator implements IHttpClient {
   ) {}
 
   async request(data: HttpRequest): Promise<HttpResponse> {
-    const account = this.getStorage.get('account');
+    const account = this.getStorage.get('account')
     if (account?.accessToken) {
       Object.assign(data, {
         headers: Object.assign(data.headers || {}, {
           Authorization: 'Bearer ' + account.accessToken,
         }),
-      });
+      })
     }
-    const httpResponse = await this.httpClient.request(data);
-    return httpResponse;
+    const httpResponse = await this.httpClient.request(data)
+    return httpResponse
   }
 }
