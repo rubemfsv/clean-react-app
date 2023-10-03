@@ -4,7 +4,7 @@
 # Project documentation and information files
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
-LICENSE.md
+LICENSE
 CHANGELOG.md
 
 # Directory containing node modules, not needed in the package
