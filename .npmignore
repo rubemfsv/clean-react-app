@@ -1,0 +1,32 @@
+# Directory generally used for GitHub configuration files
+.github
+
+# Project documentation and information files
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE.md
+CHANGELOG.md
+
+# Directory containing node modules, not needed in the package
+node_modules
+
+# Visual Studio Code configuration files
+.vscode
+
+# Directory that may contain code coverage reports
+coverage
+
+# Directory that may contain built code
+dist
+
+# Lock file for npm, not needed in the package
+package-lock.json
+
+# Directory that may contain public JavaScript files
+public/js
+
+# System files for macOS, not needed in the package
+*.DS_Store
+
+# Lock file for yarn, not needed in the package
+yarn.lock

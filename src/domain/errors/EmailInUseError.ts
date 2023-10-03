@@ -1,6 +1,8 @@
+import { DomainErrorMessagesEnum, DomainErrorNamesEnum } from "../enums";
+
 export class EmailInUseError extends Error {
   constructor() {
-    super('This email is already in use');
-    this.name = 'EmailInUseError';
+    super(DomainErrorMessagesEnum.EmailInUseError);
+    this.name = DomainErrorNamesEnum.EmailInUseError;
   }
 }
