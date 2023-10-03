@@ -185,3 +185,10 @@ Meet the talented individuals who have contributed to Clean React App project:
 <a href="https://github.com/rubemfsv/clean-react-app/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=rubemfsv/clean-react-app" />
 </a>
+
+<hr />
+<br />
+
+## License
+
+**Clean React App** is available under MIT. See [LICENSE](./LICENSE) for more details.
