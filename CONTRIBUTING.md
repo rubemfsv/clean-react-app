@@ -14,7 +14,7 @@ Please provide the following information with your issue to enable us to respond
 
 ## Key Branches
 
-* `main` - this is the current main version supporting the 1.x.x release line. Most investment will be here, including major new features, enhancements, bug fixes, security patches etc.
+- `main` - this is the current main version supporting the 1.x.x release line. Most investment will be here, including major new features, enhancements, bug fixes, security patches etc.
 
 ## I want to contribute code but don't know where to start
 
@@ -43,11 +43,11 @@ npm i -g cz-conventional-changelog
 
 #### Release notes
 
-Commit messages with `fix` or `feat` prefixes will appear in the release notes. 
+Commit messages with `fix` or `feat` prefixes will appear in the release notes.
 These communicate changes that users may want to know about.
 
-* `feat(<scope>):` or `feat:` messages appear under "New Features", and trigger minor version bumps.
-* `fix(<scope>):` or `fix:` messages appear under "Fixes and improvements", and trigger patch version bumps.
+- `feat(<scope>):` or `feat:` messages appear under "New Features", and trigger minor version bumps.
+- `fix(<scope>):` or `fix:` messages appear under "Fixes and improvements", and trigger patch version bumps.
 
 If your commit message introduces a breaking change, please include a footer that starts with `BREAKING CHANGE:`.
 For more information, please see the [Conventional Changelog](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md)
@@ -59,8 +59,8 @@ Examples of `fix` include bug fixes and dependency bumps that users of pact-js m
 
 Examples of `feat` include new features and substantial modifications to existing features.
 
-Examples of things that we'd prefer not to appear in the release notes include documentation updates, 
-modified or new examples, refactorings, new tests, etc. We usually use one of `chore`, `style`, 
+Examples of things that we'd prefer not to appear in the release notes include documentation updates,
+modified or new examples, refactorings, new tests, etc. We usually use one of `chore`, `style`,
 `refactor`, or `test` as appropriate.
 
 ## Code style and formatting

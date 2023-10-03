@@ -1,7 +1,4 @@
-import {
-  ValidationBuilder,
-  ValidationComposite,
-} from '@/validation/validators';
+import { ValidationBuilder, ValidationComposite } from '@/validation/validators'
 
 export const makeSignUpValidation = (): ValidationComposite => {
   return ValidationComposite.build([
@@ -12,5 +9,5 @@ export const makeSignUpValidation = (): ValidationComposite => {
       .required()
       .sameAs('password')
       .build(),
-  ]);
-};
+  ])
+}

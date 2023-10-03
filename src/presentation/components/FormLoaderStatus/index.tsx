@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
-import Spinner from './Spinner';
-import Context from '@/presentation/hooks/form';
+import React, { useContext } from 'react'
+import Spinner from './Spinner'
+import Context from '@/presentation/hooks/form'
 
-import Styles from './styles.scss';
+import Styles from './styles.scss'
 
 const FormLoaderStatus: React.FC = () => {
-  const { state } = useContext(Context);
-  const { isLoading, mainError } = state;
+  const { state } = useContext(Context)
+  const { isLoading, mainError } = state
 
   return (
     <div data-testid="errorWrap" className={Styles.errorWrap}>
@@ -17,7 +17,7 @@ const FormLoaderStatus: React.FC = () => {
         </span>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default FormLoaderStatus;
+export default FormLoaderStatus

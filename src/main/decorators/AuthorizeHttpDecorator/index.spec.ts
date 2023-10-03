@@ -18,7 +18,7 @@ const makeSut = (): SutTypes => {
   return {
     sut,
     getStorageSpy,
-    httpClientSpy
+    httpClientSpy,
   }
 }
 
@@ -37,8 +37,8 @@ describe('AuthorizeHttpGetClientDecorator', () => {
       url: faker.internet.url(),
       method: faker.random.arrayElement(['get', 'post', 'put', 'delete']),
       headers: {
-        field: faker.random.words()
-      }
+        field: faker.random.words(),
+      },
     }
 
     await sut.request(httpRequest)
@@ -53,7 +53,7 @@ describe('AuthorizeHttpGetClientDecorator', () => {
     getStorageSpy.value = mockAccountModel()
     const httpRequest: HttpRequest = {
       url: faker.internet.url(),
-      method: faker.random.arrayElement(['get', 'post', 'put', 'delete'])
+      method: faker.random.arrayElement(['get', 'post', 'put', 'delete']),
     }
 
     await sut.request(httpRequest)
@@ -61,7 +61,7 @@ describe('AuthorizeHttpGetClientDecorator', () => {
     expect(httpClientSpy.url).toBe(httpRequest.url)
     expect(httpClientSpy.method).toBe(httpRequest.method)
     expect(httpClientSpy.headers).toEqual({
-      'Authorization': 'Bearer ' + getStorageSpy.value.accessToken
+      Authorization: 'Bearer ' + getStorageSpy.value.accessToken,
     })
   })
 
@@ -73,8 +73,8 @@ describe('AuthorizeHttpGetClientDecorator', () => {
       url: faker.internet.url(),
       method: faker.random.arrayElement(['get', 'post', 'put', 'delete']),
       headers: {
-        field
-      }
+        field,
+      },
     }
 
     await sut.request(httpRequest)
@@ -83,7 +83,7 @@ describe('AuthorizeHttpGetClientDecorator', () => {
     expect(httpClientSpy.method).toBe(httpRequest.method)
     expect(httpClientSpy.headers).toEqual({
       field,
-      'Authorization': 'Bearer ' + getStorageSpy.value.accessToken
+      Authorization: 'Bearer ' + getStorageSpy.value.accessToken,
     })
   })
 

@@ -1,1 +1,1 @@
-export * from './AuthorizeHttpDecorator';
+export * from './AuthorizeHttpDecorator'

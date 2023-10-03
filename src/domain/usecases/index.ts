@@ -1,5 +1,5 @@
 // Auth
-export * from './Auth/Authentication';
+export * from './Auth/Authentication'
 
 // User
-export * from './User/AddAccount';
+export * from './User/AddAccount'

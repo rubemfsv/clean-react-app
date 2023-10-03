@@ -1,3 +1,3 @@
 export interface IGetStorage {
-  get: (key: string) => any;
+  get: (key: string) => any
 }

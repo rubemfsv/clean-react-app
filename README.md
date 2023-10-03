@@ -26,6 +26,7 @@ npm start or npm run dev
 <br />
 
 **This boilerplate contains the following settings:**
+
 - Local storage adapter;
 - Axios as HTTP Client;
 - Webpack configured for development and production environments;
@@ -44,8 +45,7 @@ npm start or npm run dev
 <hr />
 <br />
 
-
-## :construction_worker:  **Installation**
+## :construction_worker: **Installation**
 
 **You must first have installed [NodeJS](https://nodejs.org/) (I recommend [nvm](https://github.com/nvm-sh/nvm) to deal with versions), [Yarn](https://yarnpkg.com/), and then:**
 
@@ -83,7 +83,6 @@ In the package.json file, there are scripts that you can run with node and yarn
 ## :open_file_folder: **Architecture**
 
 The architecture used in this project was the [Clean Architecture](https://dev.to/rubemfsv/clean-architecture-the-concept-behind-the-code-52do), using the concepts proposed by Roberto Martin. To know how to implement this architecture, there is an [article applying this Architecture with React](https://dev.to/rubemfsv/arquitetura-limpa-aplicando-com-react-1eo0) that describes very well the thought line.
-
 
 ```
 cypress/
@@ -131,22 +130,22 @@ src/
     test/
     validators/
 ```
+
 <br />
 
-🖥️  **Login page**
+🖥️ **Login page**
 
 It's a simple login page with a form and error handling. It already has input, button, field and loader components.
 
 ![Login page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vyruv5eroc1eb5p7ferj.png)
 
-
-🖥️  **Sign up page**
+🖥️ **Sign up page**
 
 It is a registration page with a form that receives the username, email, password and password confirmation. It already has error handling and reused components.
 
 ![Sign up page](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r3ua2l7ybbsd9f06m57t.png)
 
-🖥️  **Dashboard page**
+🖥️ **Dashboard page**
 
 It is an empty page that is redirected after successful login. It's there to help with development, saving time by being the starting point.
 
@@ -165,6 +164,7 @@ If something doesn’t work, please [file an issue](https://github.com/rubemfsv/
 ## 📜 Code of Conduct
 
 We are committed to providing a welcoming and safe environment in our community. All contributors, maintainers, and everyone participating in this project are expected to adhere to our Code of Conduct. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+
 <hr />
 <br />
 
@@ -179,8 +179,7 @@ If something can be improved, just create a branch from `main` and make a Pull R
 
 ## Contributors
 
-Meet the talented individuals who have contributed to Clean React App project:  
-
+Meet the talented individuals who have contributed to Clean React App project:
 
 <a href="https://github.com/rubemfsv/clean-react-app/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=rubemfsv/clean-react-app" />

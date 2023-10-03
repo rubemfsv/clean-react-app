@@ -1,8 +1,8 @@
-import React from 'react';
-import { Dashboard } from '@/presentation/pages';
+import React from 'react'
+import { Dashboard } from '@/presentation/pages'
 
 const makeDashboard: React.FC = () => {
-  return <Dashboard />;
-};
+  return <Dashboard />
+}
 
-export default makeDashboard;
+export default makeDashboard

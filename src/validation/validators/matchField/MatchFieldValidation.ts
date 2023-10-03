@@ -1,5 +1,5 @@
-import { MatchFieldError } from '@/validation/errors';
-import { IFieldValidation } from '@/validation/protocols';
+import { MatchFieldError } from '@/validation/errors'
+import { IFieldValidation } from '@/validation/protocols'
 
 export class MatchFieldValidation implements IFieldValidation {
   constructor(
@@ -12,11 +12,11 @@ export class MatchFieldValidation implements IFieldValidation {
   validate(input: object): Error {
     const combinedRegex = new RegExp(
       this.pattern.source,
-      this.ignoreCase ? "i" : ""
-    );
+      this.ignoreCase ? 'i' : ''
+    )
 
     return !input[this.field] || combinedRegex.test(input[this.field])
       ? null
-      : new MatchFieldError(this.message);
+      : new MatchFieldError(this.message)
   }
 }

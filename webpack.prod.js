@@ -1,9 +1,9 @@
-const { DefinePlugin } = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { NetlifyPlugin } = require('netlify-webpack-plugin');
-const common = require('./webpack.common');
-const { merge } = require('webpack-merge');
+const { DefinePlugin } = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { NetlifyPlugin } = require('netlify-webpack-plugin')
+const common = require('./webpack.common')
+const { merge } = require('webpack-merge')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -12,15 +12,15 @@ module.exports = merge(common, {
       {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use:{
+        use: {
           loader: 'ts-loader',
-        }
+        },
       },
       {
         test: /\.(jpg|jpeg|png|woff|woff2|eot|ttf|svg)$/,
-        use:{
+        use: {
           loader: 'url-loader?limit=100000',
-        }
+        },
       },
       {
         test: /\.(css|scss)$/,
@@ -49,9 +49,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new DefinePlugin({
-      'process.env.API_URL': JSON.stringify(
-        'your_prod_env_url'
-      ),
+      'process.env.API_URL': JSON.stringify('your_prod_env_url'),
     }),
     new HtmlWebpackPlugin({
       template: './template.prod.html',
@@ -71,4 +69,4 @@ module.exports = merge(common, {
       ],
     }),
   ],
-});
+})
