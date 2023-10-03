@@ -1,6 +1,8 @@
+import { ValidationErrorMessagesEnum, ValidationErrorNamesEnum } from '../enums';
+
 export class MatchFieldError extends Error {
   constructor(message?: string) {
-    super(message || `Value does not match pattern`);
-    this.name = "MatchFieldError";
+    super(message || ValidationErrorMessagesEnum.MatchFieldError);
+    this.name = ValidationErrorNamesEnum.MatchFieldError;
   }
 }
