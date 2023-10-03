@@ -5,13 +5,13 @@
  * @arg {string} EmailInUseError - Email in use message error
  * @arg {string} InvalidCredentialsError - Invalid credentials message error
  * @arg {string} UnexpectedError - Unexpected message error
- * 
+ *
  */
 export enum DomainErrorMessagesEnum {
-    AccessDeniedError = "Access denied!",
-    EmailInUseError = "This email is already in use",
-    InvalidCredentialsError = "Invalid credentials",
-    UnexpectedError = "Something went wrong. Try again later.",
+  AccessDeniedError = 'Access denied!',
+  EmailInUseError = 'This email is already in use',
+  InvalidCredentialsError = 'Invalid credentials',
+  UnexpectedError = 'Something went wrong. Try again later.',
 }
 
 /**
@@ -23,8 +23,8 @@ export enum DomainErrorMessagesEnum {
  * @arg {string} UnexpectedError - Unexpected name error
  */
 export enum DomainErrorNamesEnum {
-    AccessDeniedError = "AccessDeniedError",
-    EmailInUseError = "EmailInUseError",
-    InvalidCredentialsError = "InvalidCredentialsError",
-    UnexpectedError = "UnexpectedError",
+  AccessDeniedError = 'AccessDeniedError',
+  EmailInUseError = 'EmailInUseError',
+  InvalidCredentialsError = 'InvalidCredentialsError',
+  UnexpectedError = 'UnexpectedError',
 }

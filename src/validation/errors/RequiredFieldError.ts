@@ -1,8 +1,8 @@
-import { DomainErrorMessagesEnum, DomainErrorNamesEnum } from "../enums";
+import { ValidationErrorMessagesEnum, ValidationErrorNamesEnum } from "../enums";
 
 export class RequiredFieldError extends Error {
   constructor() {
-    super(DomainErrorMessagesEnum.RequiredFieldError);
-    this.name = DomainErrorNamesEnum.RequiredFieldError ;
+    super(ValidationErrorMessagesEnum.RequiredFieldError);
+    this.name = ValidationErrorNamesEnum.RequiredFieldError ;
   }
 }
