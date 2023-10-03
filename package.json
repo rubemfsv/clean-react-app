@@ -23,7 +23,7 @@
     "test:watch": "npm test -- --watch",
     "test:e2e": "node_modules/.bin/cypress open",
     "postinstall": "npx husky install"
-  },  
+  },
   "bin": "./src/main/scripts/bin.js",
   "repository": "https://github.com/rubemfsv/clean-react-app.git",
   "license": "ISC",
@@ -32,6 +32,8 @@
   },
   "homepage": "https://github.com/rubemfsv/clean-react-app#readme",
   "devDependencies": {
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
     "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
     "@types/faker": "^5.1.5",
