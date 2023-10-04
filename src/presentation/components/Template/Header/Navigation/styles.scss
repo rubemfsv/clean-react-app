@@ -1,0 +1,36 @@
+
+.Container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+
+  .logo {
+    font-size: 1.5rem;
+    color: white;
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+      color: lightgray;
+      cursor: pointer;
+    }
+  }
+
+  .navList {
+    display: flex;
+    gap: 15px; 
+    list-style-type: none;
+    margin-right: 100px;
+    .navLink {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: lightgray;
+        text-decoration: underline;
+      }
+    }
+  }
+}
