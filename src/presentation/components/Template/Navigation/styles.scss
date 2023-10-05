@@ -1,0 +1,15 @@
+.navList {
+  display: flex;
+  gap: 15px;
+  list-style-type: none;
+  margin-right: 100px;
+  .navLink {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: lightgray;
+      text-decoration: underline;
+    }
+  }
+}

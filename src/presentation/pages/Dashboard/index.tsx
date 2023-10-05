@@ -1,14 +1,15 @@
 import React from 'react'
 
 import Styles from './styles.scss'
-import Navigation from '@/presentation/components/Template/Header/Navigation'
+import  Header  from '@/presentation/components/Template/Header'
 
 type DashboardProps = {}
 
 const Dashboard: React.FC<DashboardProps> = () => {
   return (
     <div className={Styles.container}>
-      <Navigation />
+
+      <Header />
 
       <div className={Styles.App}>
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" />
@@ -18,4 +19,4 @@ const Dashboard: React.FC<DashboardProps> = () => {
   )
 }
 
-export default Dashboard;
+export default Dashboard
