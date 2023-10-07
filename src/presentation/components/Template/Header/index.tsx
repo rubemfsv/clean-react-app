@@ -1,6 +1,6 @@
 import React from 'react'
 import Styles from './styles.scss'
-import Navigation from '../Navigation';
+import Navigation from '../Navigation'
 
 const Header: React.FC = () => {
   return (
@@ -15,4 +15,4 @@ const Header: React.FC = () => {
   )
 }
 
-export default Header;
+export default Header
