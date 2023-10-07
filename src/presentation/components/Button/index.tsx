@@ -24,3 +24,4 @@ const Button: React.FC<IButtonProps> = (props: IButtonProps) => {
 }
 
 export default Button
+export {IButtonProps}
