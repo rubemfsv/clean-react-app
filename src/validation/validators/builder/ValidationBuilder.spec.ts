@@ -5,6 +5,7 @@ import {
   MinLengthValidation,
   MatchFieldValidation,
   MaxLengthValidation,
+  FileTypeValidation,
 } from '@/validation/validators'
 import { ValidationBuilder } from './ValidationBuilder'
 import faker from 'faker'
@@ -57,6 +58,16 @@ describe('ValidationBuilder', () => {
       new MatchFieldValidation(field, /^[0-9]*$/, false),
     ])
   })
+
+  test('Should return FileTypeValidation', () => {
+    const field = faker.database.column();
+    const allowedFileExtensions = ['png', 'jpg', 'jpeg', 'pdf', 'txt'];
+    const validations = ValidationBuilder.field(field)
+      .fileType(allowedFileExtensions)
+      .build();
+
+    expect(validations).toEqual([new FileTypeValidation(field, allowedFileExtensions)]);
+  });
 
   test('Should return a list of validations ', () => {
     const field = faker.database.column()

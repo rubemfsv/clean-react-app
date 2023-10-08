@@ -6,6 +6,7 @@ import {
   MinLengthValidation,
   MatchFieldValidation,
   MaxLengthValidation,
+  FileTypeValidation,
 } from '@/validation/validators'
 
 export class ValidationBuilder {
@@ -54,6 +55,13 @@ export class ValidationBuilder {
       new MatchFieldValidation(this.fieldName, pattern, ignoreCase, message)
     )
     return this
+  }
+
+    fileType(allowedFileExtensions: string[]): ValidationBuilder {
+    this.validations.push(
+      new FileTypeValidation(this.fieldName, allowedFileExtensions)
+    );
+    return this;
   }
 
   build(): IFieldValidation[] {
