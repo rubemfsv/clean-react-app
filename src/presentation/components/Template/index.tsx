@@ -1,19 +1,16 @@
 import React from 'react'
 import Styles from './styles.scss'
-import Header from './Header';
-
+import Header from './Header'
 
 type TemplateProps = {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Template: React.FC<TemplateProps> = ({ children }) => {
   return (
     <div className={Styles.container}>
       <Header />
-      <div>
-        {children}
-      </div>
+     {children}
     </div>
   )
 }
