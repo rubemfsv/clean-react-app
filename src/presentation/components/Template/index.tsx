@@ -10,7 +10,7 @@ const Template: React.FC<TemplateProps> = ({ children }) => {
   return (
     <div className={Styles.container}>
       <Header />
-     {children}
+      {children}
     </div>
   )
 }

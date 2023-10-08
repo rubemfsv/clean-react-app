@@ -22,7 +22,7 @@ const Router: React.FC = () => {
         <Switch>
           <Route exact path="/login" component={makeLogin} />
           <Route exact path="/signup" component={makeSignup} />
-          <Route exact path="/" component={makeDashboard} />
+          <PrivateRoute exact path="/" component={makeDashboard} />
         </Switch>
       </BrowserRouter>
     </ApiContext.Provider>
