@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent, screen } from '@testing-library/react'
 import { Button, IButtonProps } from '@/presentation/components'
-import faker from 'faker';
+import faker from 'faker'
 
 const makeSut = (props: IButtonProps) => {
   render(<Button {...props} />)
