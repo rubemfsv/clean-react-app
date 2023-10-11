@@ -35,7 +35,7 @@ console.log(
 
 console.log(`cd ${repoName} && npm run dev`)
 
-console.log(`Author: ${authorName}`)
+
 
 // Dynamically update package.json
 const packageJsonPath = `${repoName}/package.json`
@@ -56,5 +56,4 @@ try {
   console.error('Failed to update package.json: ', error)
 }
 
-export { repoName, authorName }
 
