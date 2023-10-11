@@ -8,7 +8,7 @@ type DashboardProps = {}
 const Dashboard: React.FC<DashboardProps> = () => {
   return (
     <Template>
-      <div className={Styles.App}>
+      <div className={Styles.app}>
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" />
         <span>Start your development from here</span>
       </div>

@@ -4,11 +4,9 @@ import Navigation from '../Navigation'
 
 const Header: React.FC = () => {
   return (
-    <div className={Styles.Container}>
-      <img
-        className={Styles.logo}
-        src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-      />
+    <div className={Styles.container}>
+
+      <h1 className={Styles.logo}>My App</h1>
 
       <Navigation />
     </div>
