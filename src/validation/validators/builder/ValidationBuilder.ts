@@ -57,11 +57,11 @@ export class ValidationBuilder {
     return this
   }
 
-    fileType(allowedFileExtensions: string[]): ValidationBuilder {
+  fileType(allowedFileExtensions: string[]): ValidationBuilder {
     this.validations.push(
       new FileTypeValidation(this.fieldName, allowedFileExtensions)
-    );
-    return this;
+    )
+    return this
   }
 
   build(): IFieldValidation[] {

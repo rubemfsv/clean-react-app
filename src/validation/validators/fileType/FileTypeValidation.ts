@@ -8,18 +8,20 @@ export class FileTypeValidation implements IFieldValidation {
   ) {}
 
   private getFileExtension(fileName: string): string {
-    const parts = fileName?.split('.');
-    if (parts?.length === 1 || (parts?.[0] === '' && parts?.length === 2)) {
-      return ''; // No extension found
+    const ext = fileName.lastIndexOf('.')
+    if (ext === -1) {
+      return '' // No extension found
     }
-    return parts?.pop()!.toLowerCase();
+    return fileName.slice(ext + 1).toLowerCase()
   }
 
   validate(input: object): Error {
-    const fileExtension = this.getFileExtension(input[this.field]?.toLowerCase());
-    const allowedExtensions = this.allowedFileExtensions.map((ext) => ext.toLowerCase());
-    return !fileExtension || !allowedExtensions.includes(fileExtension)
-      ? new InvalidFileTypeError()
-      : null
+    const fileExtension = this.getFileExtension(
+      (input[this.field] || '').toLowerCase()
+    )
+    const isAllowed = this.allowedFileExtensions.find(
+      (ext) => ext.toLowerCase() === fileExtension
+    )
+    return fileExtension && isAllowed ? null : new InvalidFileTypeError()
   }
 }
