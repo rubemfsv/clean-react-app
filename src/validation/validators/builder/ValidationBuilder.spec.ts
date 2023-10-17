@@ -5,6 +5,7 @@ import {
   MinLengthValidation,
   MatchFieldValidation,
   MaxLengthValidation,
+  FileTypeValidation,
 } from '@/validation/validators'
 import { ValidationBuilder } from './ValidationBuilder'
 import faker from 'faker'
@@ -58,12 +59,25 @@ describe('ValidationBuilder', () => {
     ])
   })
 
+  test('Should return FileTypeValidation', () => {
+    const field = faker.database.column()
+    const allowedFileExtensions = ['png', 'jpg', 'jpeg', 'pdf', 'txt']
+    const validations = ValidationBuilder.field(field)
+      .fileType(allowedFileExtensions)
+      .build()
+
+    expect(validations).toEqual([
+      new FileTypeValidation(field, allowedFileExtensions),
+    ])
+  })
+
   test('Should return a list of validations ', () => {
     const field = faker.database.column()
     const fieldToCompare = faker.database.column()
     const minLength = faker.datatype.number()
     const maxLength = minLength + faker.datatype.number()
     const DIGITS_REGEX = /^[0-9]*$/
+    const allowedFileExtensions = ['png', 'jpg', 'jpeg', 'pdf', 'txt']
     const validations = ValidationBuilder.field(field)
       .required()
       .min(minLength)
@@ -71,6 +85,7 @@ describe('ValidationBuilder', () => {
       .sameAs(fieldToCompare)
       .email()
       .match(DIGITS_REGEX)
+      .fileType(allowedFileExtensions)
       .build()
     expect(validations).toEqual([
       new RequiredFieldValidation(field),
@@ -79,6 +94,7 @@ describe('ValidationBuilder', () => {
       new CompareFieldsValidation(field, fieldToCompare),
       new EmailFieldValidation(field),
       new MatchFieldValidation(field, DIGITS_REGEX, false),
+      new FileTypeValidation(field, allowedFileExtensions),
     ])
   })
 })
