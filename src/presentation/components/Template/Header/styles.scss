@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #333;
+
+  .logo {
+    font-size: 1.5rem;
+    color: white;
+
+    &:hover {
+      color: lightgray;
+      cursor: pointer;
+    }
+  }
+}
