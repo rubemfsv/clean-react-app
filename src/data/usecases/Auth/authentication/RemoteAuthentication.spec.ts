@@ -1,14 +1,14 @@
+import faker from 'faker'
 import {
   RemoteAuthentication,
-  RemoteAuthenticationamespace,
+  type RemoteAuthenticationamespace
 } from './RemoteAuthentication'
 import { HttpClientSpy } from '@/data/test'
 import { HttpStatusCode } from '@/data/protocols/http/'
 import { mockAuthenticationModel, mockAuthentication } from '@/domain/test/'
 import { InvalidCredentialsError, UnexpectedError } from '@/domain/errors/'
-import faker from 'faker'
 
-type SutTypes = {
+interface SutTypes {
   systemUnderTest: RemoteAuthentication
   httpClientSpy: HttpClientSpy<RemoteAuthenticationamespace.Model>
 }
@@ -19,7 +19,7 @@ const makeSystemUnderTest = (url: string = faker.internet.url()): SutTypes => {
 
   return {
     systemUnderTest,
-    httpClientSpy,
+    httpClientSpy
   }
 }
 
@@ -40,7 +40,7 @@ describe('RemoteAuthentication', () => {
     const httpResult = mockAuthenticationModel()
     httpClientSpy.response = {
       statusCode: HttpStatusCode.ok,
-      body: httpResult,
+      body: httpResult
     }
     const account = await systemUnderTest.auth(mockAuthentication())
 
@@ -50,7 +50,7 @@ describe('RemoteAuthentication', () => {
   test('Should throw InvalidCredentialsError if HttpPostClient returns 401', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.unauthorized,
+      statusCode: HttpStatusCode.unauthorized
     }
     const promise = systemUnderTest.auth(mockAuthentication())
 
@@ -60,7 +60,7 @@ describe('RemoteAuthentication', () => {
   test('Should throw UnexpectedError if HttpPostClient returns 400', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.badRequest,
+      statusCode: HttpStatusCode.badRequest
     }
     const promise = systemUnderTest.auth(mockAuthentication())
 
@@ -70,7 +70,7 @@ describe('RemoteAuthentication', () => {
   test('Should throw UnexpectedError if HttpPostClient returns 404', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.notFound,
+      statusCode: HttpStatusCode.notFound
     }
     const promise = systemUnderTest.auth(mockAuthentication())
 
@@ -80,7 +80,7 @@ describe('RemoteAuthentication', () => {
   test('Should throw UnexpectedError if HttpPostClient returns 500', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.serverError,
+      statusCode: HttpStatusCode.serverError
     }
     const promise = systemUnderTest.auth(mockAuthentication())
 

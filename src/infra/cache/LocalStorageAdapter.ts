@@ -1,7 +1,7 @@
-import { IGetStorage, ISetStorage } from '@/data/protocols/cache/'
+import { type IGetStorage, type ISetStorage } from '@/data/protocols/cache/'
 
 export class LocalStorageAdapter implements ISetStorage, IGetStorage {
-  set(key: string, value: object): void {
+  set (key: string, value: object): void {
     if (value) {
       localStorage.setItem(key, JSON.stringify(value))
     } else {
@@ -9,7 +9,7 @@ export class LocalStorageAdapter implements ISetStorage, IGetStorage {
     }
   }
 
-  get(key: string): any {
+  get (key: string): any {
     return JSON.parse(localStorage.getItem(key))
   }
 }

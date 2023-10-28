@@ -1,6 +1,6 @@
+import faker from 'faker'
 import { MatchFieldError } from '@/validation/errors'
 import { MatchFieldValidation } from './MatchFieldValidation'
-import faker from 'faker'
 
 const ONLY_DIGITS_REGEX = /^[0-9]*$/
 const CAPITAL_LETTERS_REGEX = /[A-Z]+/
@@ -38,11 +38,11 @@ describe('MatchFieldValidation', () => {
   })
 
   test('Should return a custom error message if match is invalid', () => {
-    const message = `Only uppercase letters are allowed!`
+    const message = 'Only uppercase letters are allowed!'
     const field = faker.database.column()
     const sut = makeSut(field, CAPITAL_LETTERS_REGEX, false, message)
     const error = sut.validate({
-      [field]: faker.random.alpha({ count: 5 }),
+      [field]: faker.random.alpha({ count: 5 })
     })
 
     expect(error).toEqual(new MatchFieldError(message))

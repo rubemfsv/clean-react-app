@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent, screen } from '@testing-library/react'
-import { Button, IButtonProps } from '@/presentation/components'
 import faker from 'faker'
+import { Button, type IButtonProps } from '@/presentation/components'
 
 const makeSut = (props: IButtonProps) => {
   render(<Button {...props} />)
@@ -12,7 +12,7 @@ const makeSut = (props: IButtonProps) => {
 describe('Button component', () => {
   test('renders with title', () => {
     const props: IButtonProps = {
-      title: faker.lorem.words(2),
+      title: faker.lorem.words(2)
     }
     const { buttonElement } = makeSut(props)
     expect(buttonElement).toBeInTheDocument()
@@ -22,7 +22,7 @@ describe('Button component', () => {
     const onClickMock = jest.fn()
     const props: IButtonProps = {
       title: faker.lorem.words(2),
-      onClick: onClickMock,
+      onClick: onClickMock
     }
     const { buttonElement } = makeSut(props)
     fireEvent.click(buttonElement)
@@ -32,7 +32,7 @@ describe('Button component', () => {
   test('applies custom class name', () => {
     const props: IButtonProps = {
       title: faker.lorem.words(2),
-      className: 'custom-class',
+      className: 'custom-class'
     }
     const { buttonElement } = makeSut(props)
     expect(buttonElement).toHaveClass('custom-class')
@@ -41,7 +41,7 @@ describe('Button component', () => {
   test('renders with data-testid', () => {
     const props: IButtonProps = {
       title: faker.lorem.words(2),
-      'data-testid': 'test-button',
+      'data-testid': 'test-button'
     }
     const { buttonElement } = makeSut(props)
     expect(buttonElement).toBeInTheDocument()
@@ -50,7 +50,7 @@ describe('Button component', () => {
   test('renders as disabled', () => {
     const props: IButtonProps = {
       title: faker.lorem.words(2),
-      disabled: true,
+      disabled: true
     }
     const { buttonElement } = makeSut(props)
     expect(buttonElement).toBeDisabled()
@@ -62,7 +62,7 @@ describe('Button component', () => {
       onClick: jest.fn(),
       'data-testid': 'test-button',
       className: 'custom-class',
-      autoFocus: true,
+      autoFocus: true
     }
 
     const { buttonElement } = makeSut(props)

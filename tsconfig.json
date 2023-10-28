@@ -11,8 +11,11 @@
       "@/*": ["*"]
     },
     "allowJs": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "noEmit": true,
+    "types": ["@types/node"]
   },
-  "include": ["src"],
+  "include": ["src", ".eslintrc.cjs"],
   "exclude": ["src/main/test/cypress"]
 }

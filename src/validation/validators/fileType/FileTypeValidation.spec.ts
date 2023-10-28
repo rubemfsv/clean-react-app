@@ -1,6 +1,6 @@
+import faker from 'faker'
 import { FileTypeValidation } from './FileTypeValidation'
 import { InvalidFileTypeError } from '@/validation/errors'
-import faker from 'faker'
 
 const field = faker.database.column()
 const allowedFileExtensions = ['png', 'jpg', 'jpeg', 'pdf', 'txt']

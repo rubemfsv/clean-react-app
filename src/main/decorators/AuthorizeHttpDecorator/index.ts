@@ -1,19 +1,19 @@
-import { IHttpClient, HttpRequest, HttpResponse } from '@/data/protocols/http'
-import { IGetStorage } from '@/data/protocols/cache/getStorage'
+import { type IHttpClient, type HttpRequest, type HttpResponse } from '@/data/protocols/http'
+import { type IGetStorage } from '@/data/protocols/cache/getStorage'
 
 export class AuthorizeHttpClientDecorator implements IHttpClient {
-  constructor(
+  constructor (
     private readonly getStorage: IGetStorage,
     private readonly httpClient: IHttpClient
   ) {}
 
-  async request(data: HttpRequest): Promise<HttpResponse> {
+  async request (data: HttpRequest): Promise<HttpResponse> {
     const account = this.getStorage.get('account')
     if (account?.accessToken) {
       Object.assign(data, {
         headers: Object.assign(data.headers || {}, {
-          Authorization: 'Bearer ' + account.accessToken,
-        }),
+          Authorization: 'Bearer ' + account.accessToken
+        })
       })
     }
     const httpResponse = await this.httpClient.request(data)

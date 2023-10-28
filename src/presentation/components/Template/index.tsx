@@ -2,7 +2,7 @@ import React from 'react'
 import Styles from './styles.scss'
 import Header from './Header'
 
-type TemplateProps = {
+interface TemplateProps {
   children: React.ReactNode
 }
 

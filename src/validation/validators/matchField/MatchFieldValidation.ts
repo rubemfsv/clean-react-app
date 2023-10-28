@@ -1,15 +1,15 @@
 import { MatchFieldError } from '@/validation/errors'
-import { IFieldValidation } from '@/validation/protocols'
+import { type IFieldValidation } from '@/validation/protocols'
 
 export class MatchFieldValidation implements IFieldValidation {
-  constructor(
+  constructor (
     readonly field: string,
     private readonly pattern: RegExp,
     private readonly ignoreCase?: boolean,
     private readonly message?: string
   ) {}
 
-  validate(input: object): Error {
+  validate (input: object): Error {
     const combinedRegex = new RegExp(
       this.pattern.source,
       this.ignoreCase ? 'i' : ''

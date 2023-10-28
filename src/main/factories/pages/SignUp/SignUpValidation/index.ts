@@ -8,6 +8,6 @@ export const makeSignUpValidation = (): ValidationComposite => {
     ...ValidationBuilder.field('passwordConfirmation')
       .required()
       .sameAs('password')
-      .build(),
+      .build()
   ])
 }

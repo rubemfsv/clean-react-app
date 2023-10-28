@@ -1,10 +1,10 @@
 import { InvalidFieldError } from '@/validation/errors'
-import { IFieldValidation } from '@/validation/protocols'
+import { type IFieldValidation } from '@/validation/protocols'
 
 export class EmailFieldValidation implements IFieldValidation {
-  constructor(readonly field: string) {}
+  constructor (readonly field: string) {}
 
-  validate(input: object): Error {
+  validate (input: object): Error {
     const emailRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 

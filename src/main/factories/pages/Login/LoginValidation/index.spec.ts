@@ -7,7 +7,7 @@ describe('LoginValidationFactory', () => {
     expect(composite).toEqual(
       ValidationComposite.build([
         ...ValidationBuilder.field('email').required().email().build(),
-        ...ValidationBuilder.field('password').required().min(4).build(),
+        ...ValidationBuilder.field('password').required().min(4).build()
       ])
     )
   })

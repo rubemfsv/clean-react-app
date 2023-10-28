@@ -1,23 +1,22 @@
-import { HttpRequest, HttpResponse, IHttpClient } from '@/data/protocols/http'
-
-import axios, { AxiosResponse } from 'axios'
+import axios, { type AxiosResponse } from 'axios'
+import { type HttpRequest, type HttpResponse, type IHttpClient } from '@/data/protocols/http'
 
 export class AxiosHttpClient implements IHttpClient {
-  async request(data: HttpRequest): Promise<HttpResponse> {
+  async request (data: HttpRequest): Promise<HttpResponse> {
     let axiosResponse: AxiosResponse
     try {
       axiosResponse = await axios.request({
         url: data.url,
         method: data.method,
         data: data.body,
-        headers: data.headers,
+        headers: data.headers
       })
     } catch (error) {
       axiosResponse = error.response
     }
     return {
       statusCode: axiosResponse.status,
-      body: axiosResponse.data,
+      body: axiosResponse.data
     }
   }
 }

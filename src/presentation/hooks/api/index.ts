@@ -1,7 +1,7 @@
-import { AccountModel } from '@/domain/models'
 import { createContext } from 'react'
+import { type AccountModel } from '@/domain/models'
 
-type ApiProps = {
+interface ApiProps {
   setCurrentAccount?: (account: AccountModel) => void
   getCurrentAccount?: () => AccountModel
 }

@@ -1,8 +1,8 @@
 import React from 'react'
-import { fireEvent, render, RenderResult } from '@testing-library/react'
+import { fireEvent, render, type RenderResult } from '@testing-library/react'
+import faker from 'faker'
 import { Input } from '@/presentation/components'
 import Context from '@/presentation/hooks/form'
-import faker from 'faker'
 
 const makeSut = (fieldName: string): RenderResult => {
   return render(

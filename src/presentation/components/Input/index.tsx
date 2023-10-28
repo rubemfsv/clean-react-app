@@ -5,8 +5,8 @@ import Styles from './styles.scss'
 
 interface IInputProps
   extends React.DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
   > {
   title?: string
   hideStatus?: boolean
@@ -37,7 +37,7 @@ const Input: React.FC<IInputProps> = (props: IInputProps) => {
         readOnly
         onFocus={enableInput}
         onChange={handleInputChange}
-        onBlur={() => setIsActiveFocus(false)}
+        onBlur={() => { setIsActiveFocus(false) }}
         placeholder="&nbsp;"
         className={Styles.Input}
       />

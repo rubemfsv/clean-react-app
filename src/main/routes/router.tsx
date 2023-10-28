@@ -5,7 +5,7 @@ import PrivateRoute from '@/presentation/Routes/private.routes'
 import { ApiContext } from '@/presentation/hooks'
 import {
   getCurrentAccountAdapter,
-  setCurrentAccountAdapter,
+  setCurrentAccountAdapter
 } from '../adapters/CurrentAccountAdapter'
 
 import '@/presentation/styles/global.scss'
@@ -15,7 +15,7 @@ const Router: React.FC = () => {
     <ApiContext.Provider
       value={{
         setCurrentAccount: setCurrentAccountAdapter,
-        getCurrentAccount: getCurrentAccountAdapter,
+        getCurrentAccount: getCurrentAccountAdapter
       }}
     >
       <BrowserRouter>

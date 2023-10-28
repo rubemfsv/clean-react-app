@@ -1,4 +1,4 @@
-import { IFieldValidation } from '@/validation/protocols'
+import { type IFieldValidation } from '@/validation/protocols'
 import {
   CompareFieldsValidation,
   RequiredFieldValidation,
@@ -6,47 +6,47 @@ import {
   MinLengthValidation,
   MatchFieldValidation,
   MaxLengthValidation,
-  FileTypeValidation,
+  FileTypeValidation
 } from '@/validation/validators'
 
 export class ValidationBuilder {
-  private constructor(
+  private constructor (
     private readonly fieldName: string,
     private readonly validations: IFieldValidation[]
   ) {}
 
-  static field(fieldName: string): ValidationBuilder {
+  static field (fieldName: string): ValidationBuilder {
     return new ValidationBuilder(fieldName, [])
   }
 
-  required(): ValidationBuilder {
+  required (): ValidationBuilder {
     this.validations.push(new RequiredFieldValidation(this.fieldName))
     return this
   }
 
-  email(): ValidationBuilder {
+  email (): ValidationBuilder {
     this.validations.push(new EmailFieldValidation(this.fieldName))
     return this
   }
 
-  min(length: number): ValidationBuilder {
+  min (length: number): ValidationBuilder {
     this.validations.push(new MinLengthValidation(this.fieldName, length))
     return this
   }
 
-  max(length: number): ValidationBuilder {
+  max (length: number): ValidationBuilder {
     this.validations.push(new MaxLengthValidation(this.fieldName, length))
     return this
   }
 
-  sameAs(fieldToCompare: string): ValidationBuilder {
+  sameAs (fieldToCompare: string): ValidationBuilder {
     this.validations.push(
       new CompareFieldsValidation(this.fieldName, fieldToCompare)
     )
     return this
   }
 
-  match(
+  match (
     pattern: RegExp,
     ignoreCase: boolean = false,
     message?: string
@@ -57,14 +57,14 @@ export class ValidationBuilder {
     return this
   }
 
-  fileType(allowedFileExtensions: string[]): ValidationBuilder {
+  fileType (allowedFileExtensions: string[]): ValidationBuilder {
     this.validations.push(
       new FileTypeValidation(this.fieldName, allowedFileExtensions)
     )
     return this
   }
 
-  build(): IFieldValidation[] {
+  build (): IFieldValidation[] {
     return this.validations
   }
 }

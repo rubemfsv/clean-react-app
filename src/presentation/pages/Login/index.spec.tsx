@@ -7,18 +7,18 @@ import { Login } from '@/presentation/pages'
 import {
   AuthenticationSpy,
   ValidationStub,
-  FormHelper,
+  FormHelper
 } from '@/presentation/test/'
 import { InvalidCredentialsError } from '@/domain/errors'
 import { ApiContext } from '@/presentation/hooks'
-import { Authentication } from '@/domain/usecases'
+import { type Authentication } from '@/domain/usecases'
 
-type SutTypes = {
+interface SutTypes {
   authenticationSpy: AuthenticationSpy
   setCurrentAccoutMock: (account: Authentication.Model) => void
 }
 
-type SutParams = {
+interface SutParams {
   validationError: string
 }
 
@@ -40,7 +40,7 @@ const makeSystemUnderTest = (params?: SutParams): SutTypes => {
 
   return {
     authenticationSpy,
-    setCurrentAccoutMock,
+    setCurrentAccoutMock
   }
 }
 
@@ -51,7 +51,7 @@ const simulateValidSubmit = async (
   FormHelper.populateField('email', email)
   FormHelper.populateField('password', password)
 
-  const form = screen.getByTestId('loginForm') as HTMLButtonElement
+  const form = screen.getByTestId('loginForm')
 
   fireEvent.submit(form)
 
