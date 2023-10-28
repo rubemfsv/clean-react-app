@@ -1,11 +1,11 @@
-import { IFieldValidation } from '../protocols'
+import { type IFieldValidation } from '../protocols'
 
 export class FieldValidationSpy implements IFieldValidation {
   error: Error = null
 
-  constructor(readonly field: string) {}
+  constructor (readonly field: string) {}
 
-  validate(input: object): Error {
+  validate (input: object): Error {
     return this.error
   }
 }

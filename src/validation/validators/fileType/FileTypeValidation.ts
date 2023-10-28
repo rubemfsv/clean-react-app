@@ -1,13 +1,13 @@
 import { InvalidFileTypeError } from '@/validation/errors'
-import { IFieldValidation } from '@/validation/protocols'
+import { type IFieldValidation } from '@/validation/protocols'
 
 export class FileTypeValidation implements IFieldValidation {
-  constructor(
+  constructor (
     readonly field: string,
     private readonly allowedFileExtensions: string[]
   ) {}
 
-  private getFileExtension(fileName: string): string {
+  private getFileExtension (fileName: string): string {
     const ext = fileName.lastIndexOf('.')
     if (ext === -1) {
       return '' // No extension found
@@ -15,7 +15,7 @@ export class FileTypeValidation implements IFieldValidation {
     return fileName.slice(ext + 1).toLowerCase()
   }
 
-  validate(input: object): Error {
+  validate (input: object): Error {
     const fileExtension = this.getFileExtension(
       (input[this.field] || '').toLowerCase()
     )

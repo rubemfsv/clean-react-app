@@ -1,7 +1,7 @@
 import { ValidationErrorMessagesEnum } from '../enums'
 
 export class InvalidFieldError extends Error {
-  constructor() {
+  constructor () {
     super(ValidationErrorMessagesEnum.InvalidFieldError)
   }
 }

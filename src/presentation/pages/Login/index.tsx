@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { ApiContext, FormContext } from '@/presentation/hooks'
-import { IValidation } from '@/presentation/protocols/validation'
-import { IAuthentication } from '@/domain/usecases'
+import { type IValidation } from '@/presentation/protocols/validation'
+import { type IAuthentication } from '@/domain/usecases'
 import { Button, Input, FormLoaderStatus } from '@/presentation/components/'
 import Styles from './styles.scss'
 
-type LoginProps = {
+interface LoginProps {
   validation: IValidation
   authentication: IAuthentication
 }
 
 const Login: React.FC<LoginProps> = ({
   validation,
-  authentication,
+  authentication
 }: LoginProps) => {
   const { setCurrentAccount } = useContext(ApiContext)
   const history = useHistory()
@@ -24,7 +24,7 @@ const Login: React.FC<LoginProps> = ({
     password: '',
     emailError: '',
     passwordError: '',
-    mainError: '',
+    mainError: ''
   })
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Login: React.FC<LoginProps> = ({
       ...state,
       emailError,
       passwordError,
-      isFormInvalid: !!emailError || !!passwordError,
+      isFormInvalid: !!emailError || !!passwordError
     })
   }, [state.email, state.password])
 
@@ -53,7 +53,7 @@ const Login: React.FC<LoginProps> = ({
 
       const account = await authentication.auth({
         email: state.email,
-        password: state.password,
+        password: state.password
       })
 
       setCurrentAccount(account)
@@ -62,7 +62,7 @@ const Login: React.FC<LoginProps> = ({
       setState({
         ...state,
         isLoading: false,
-        mainError: error.message,
+        mainError: error.message
       })
     }
   }

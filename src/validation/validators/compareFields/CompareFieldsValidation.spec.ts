@@ -1,6 +1,6 @@
+import faker from 'faker'
 import { InvalidFieldError } from '@/validation/errors'
 import { CompareFieldsValidation } from './CompareFieldsValidation'
-import faker from 'faker'
 
 const makeSut = (
   fieldName: string,
@@ -15,7 +15,7 @@ describe('CompareFieldsValidation', () => {
     const sut = makeSut(field, fieldToCompare)
     const error = sut.validate({
       [field]: faker.random.words(3),
-      [fieldToCompare]: faker.random.words(4),
+      [fieldToCompare]: faker.random.words(4)
     })
     expect(error).toEqual(new InvalidFieldError())
   })
@@ -27,7 +27,7 @@ describe('CompareFieldsValidation', () => {
     const sut = makeSut(field, fieldToCompare)
     const error = sut.validate({
       [field]: value,
-      [fieldToCompare]: value,
+      [fieldToCompare]: value
     })
     expect(error).toBeFalsy()
   })

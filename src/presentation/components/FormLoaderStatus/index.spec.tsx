@@ -1,8 +1,8 @@
 import React from 'react'
-import { RenderResult, render } from '@testing-library/react'
+import { type RenderResult, render } from '@testing-library/react'
+import faker from 'faker'
 import { FormLoaderStatus } from '@/presentation/components'
 import Context from '@/presentation/hooks/form'
-import faker from 'faker'
 
 let mainError = ''
 let isLoading = false

@@ -2,19 +2,19 @@ import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 import Context from '@/presentation/hooks/form'
 import { Button, Input, FormLoaderStatus } from '@/presentation/components/'
-import { IValidation } from '@/presentation/protocols/validation'
-import { IAddAccount } from '@/domain/usecases'
+import { type IValidation } from '@/presentation/protocols/validation'
+import { type IAddAccount } from '@/domain/usecases'
 import Styles from './styles.scss'
 import { ApiContext } from '@/presentation/hooks'
 
-type SignUpProps = {
+interface SignUpProps {
   validation: IValidation
   addAccount: IAddAccount
 }
 
 const SignUp: React.FC<SignUpProps> = ({
   validation,
-  addAccount,
+  addAccount
 }: SignUpProps) => {
   const { setCurrentAccount } = useContext(ApiContext)
   const history = useHistory()
@@ -29,7 +29,7 @@ const SignUp: React.FC<SignUpProps> = ({
     nameError: '',
     passwordError: '',
     passwordConfirmationError: '',
-    mainError: '',
+    mainError: ''
   })
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const SignUp: React.FC<SignUpProps> = ({
       email,
       name,
       password,
-      passwordConfirmation,
+      passwordConfirmation
     }
     const emailError = validation.validate('email', formData)
     const nameError = validation.validate('name', formData)
@@ -58,7 +58,7 @@ const SignUp: React.FC<SignUpProps> = ({
         !!emailError ||
         !!nameError ||
         !!passwordError ||
-        !!passwordConfirmationError,
+        !!passwordConfirmationError
     })
   }, [state.email, state.name, state.password, state.passwordConfirmation])
 
@@ -72,13 +72,13 @@ const SignUp: React.FC<SignUpProps> = ({
       }
       setState({
         ...state,
-        isLoading: true,
+        isLoading: true
       })
-      let account = await addAccount.add({
+      const account = await addAccount.add({
         email: state.email,
         name: state.name,
         password: state.password,
-        passwordConfirmation: state.passwordConfirmation,
+        passwordConfirmation: state.passwordConfirmation
       })
 
       setCurrentAccount(account)
@@ -87,7 +87,7 @@ const SignUp: React.FC<SignUpProps> = ({
       setState({
         ...state,
         isLoading: false,
-        mainError: error.message,
+        mainError: error.message
       })
     }
   }

@@ -1,6 +1,6 @@
+import faker from 'faker'
 import { MaxLengthValidation } from './MaxLengthValidation'
 import { InvalidFieldError } from '@/validation/errors'
-import faker from 'faker'
 
 const maxLength = faker.datatype.number()
 
@@ -12,7 +12,7 @@ describe('MaxLengthValidation', () => {
     const field = faker.database.column()
     const sut = makeSut(field)
     const error = sut.validate({
-      [field]: faker.random.alphaNumeric(maxLength + 1),
+      [field]: faker.random.alphaNumeric(maxLength + 1)
     })
     expect(error).toEqual(new InvalidFieldError())
   })
@@ -21,7 +21,7 @@ describe('MaxLengthValidation', () => {
     const field = faker.database.column()
     const sut = makeSut(field)
     const error = sut.validate({
-      [field]: faker.random.alphaNumeric(maxLength),
+      [field]: faker.random.alphaNumeric(maxLength)
     })
     expect(error).toBeFalsy()
   })
@@ -30,7 +30,7 @@ describe('MaxLengthValidation', () => {
     const field = faker.database.column()
     const sut = makeSut(field)
     const error = sut.validate({
-      [field]: faker.random.alphaNumeric(maxLength - 1),
+      [field]: faker.random.alphaNumeric(maxLength - 1)
     })
     expect(error).toBeFalsy()
   })
@@ -38,7 +38,7 @@ describe('MaxLengthValidation', () => {
   test('Should return falsy if field does not exists in schema', () => {
     const sut = makeSut(faker.database.column())
     const error = sut.validate({
-      [faker.database.column()]: faker.random.alphaNumeric(maxLength - 1),
+      [faker.database.column()]: faker.random.alphaNumeric(maxLength - 1)
     })
     expect(error).toBeFalsy()
   })

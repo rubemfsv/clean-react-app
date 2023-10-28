@@ -1,11 +1,11 @@
-import { RemoteAddAccount, RemoteAddAccountNamespace } from './RemoteAddAccount'
+import faker from 'faker'
+import { RemoteAddAccount, type RemoteAddAccountNamespace } from './RemoteAddAccount'
 import { HttpClientSpy } from '@/data/test'
 import { HttpStatusCode } from '@/data/protocols/http/'
 import { mockAddAccountModel, mockAddAccount } from '@/domain/test/'
 import { EmailInUseError, UnexpectedError } from '@/domain/errors/'
-import faker from 'faker'
 
-type SutTypes = {
+interface SutTypes {
   systemUnderTest: RemoteAddAccount
   httpClientSpy: HttpClientSpy<RemoteAddAccountNamespace.Model>
 }
@@ -16,7 +16,7 @@ const makeSystemUnderTest = (url: string = faker.internet.url()): SutTypes => {
 
   return {
     systemUnderTest,
-    httpClientSpy,
+    httpClientSpy
   }
 }
 
@@ -36,7 +36,7 @@ describe('RemoteAddAccount', () => {
   test('Should throw UnexpectedError if HttpClient returns 400', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.badRequest,
+      statusCode: HttpStatusCode.badRequest
     }
     const promise = systemUnderTest.add(mockAddAccount())
 
@@ -46,7 +46,7 @@ describe('RemoteAddAccount', () => {
   test('Should throw EmailInUseError if HttpClient returns 403', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.forbidden,
+      statusCode: HttpStatusCode.forbidden
     }
     const promise = systemUnderTest.add(mockAddAccount())
 
@@ -56,7 +56,7 @@ describe('RemoteAddAccount', () => {
   test('Should throw UnexpectedError if HttpClient returns 404', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.notFound,
+      statusCode: HttpStatusCode.notFound
     }
     const promise = systemUnderTest.add(mockAddAccount())
 
@@ -66,7 +66,7 @@ describe('RemoteAddAccount', () => {
   test('Should throw UnexpectedError if HttpClient returns 500', async () => {
     const { systemUnderTest, httpClientSpy } = makeSystemUnderTest()
     httpClientSpy.response = {
-      statusCode: HttpStatusCode.serverError,
+      statusCode: HttpStatusCode.serverError
     }
     const promise = systemUnderTest.add(mockAddAccount())
 

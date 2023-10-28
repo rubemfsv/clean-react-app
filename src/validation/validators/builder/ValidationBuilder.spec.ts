@@ -1,3 +1,4 @@
+import faker from 'faker'
 import {
   CompareFieldsValidation,
   RequiredFieldValidation,
@@ -5,10 +6,9 @@ import {
   MinLengthValidation,
   MatchFieldValidation,
   MaxLengthValidation,
-  FileTypeValidation,
+  FileTypeValidation
 } from '@/validation/validators'
 import { ValidationBuilder } from './ValidationBuilder'
-import faker from 'faker'
 
 describe('ValidationBuilder', () => {
   test('Should return RequiredFieldValidation ', () => {
@@ -44,7 +44,7 @@ describe('ValidationBuilder', () => {
       .sameAs(fieldToCompare)
       .build()
     expect(validations).toEqual([
-      new CompareFieldsValidation(field, fieldToCompare),
+      new CompareFieldsValidation(field, fieldToCompare)
     ])
   })
 
@@ -55,7 +55,7 @@ describe('ValidationBuilder', () => {
       .build()
 
     expect(validations).toEqual([
-      new MatchFieldValidation(field, /^[0-9]*$/, false),
+      new MatchFieldValidation(field, /^[0-9]*$/, false)
     ])
   })
 
@@ -67,7 +67,7 @@ describe('ValidationBuilder', () => {
       .build()
 
     expect(validations).toEqual([
-      new FileTypeValidation(field, allowedFileExtensions),
+      new FileTypeValidation(field, allowedFileExtensions)
     ])
   })
 
@@ -94,7 +94,7 @@ describe('ValidationBuilder', () => {
       new CompareFieldsValidation(field, fieldToCompare),
       new EmailFieldValidation(field),
       new MatchFieldValidation(field, DIGITS_REGEX, false),
-      new FileTypeValidation(field, allowedFileExtensions),
+      new FileTypeValidation(field, allowedFileExtensions)
     ])
   })
 })

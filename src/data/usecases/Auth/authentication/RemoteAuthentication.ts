@@ -1,6 +1,6 @@
-import { IHttpClient, HttpStatusCode } from '@/data/protocols/http'
+import { type IHttpClient, HttpStatusCode } from '@/data/protocols/http'
 import { UnexpectedError, InvalidCredentialsError } from '@/domain/errors'
-import { IAuthentication, Authentication } from '@/domain/usecases'
+import { type IAuthentication, type Authentication } from '@/domain/usecases'
 
 export class RemoteAuthentication implements IAuthentication {
   constructor(

@@ -1,5 +1,5 @@
-import { AddAccount, IAddAccount } from '@/domain/usecases'
 import faker from 'faker'
+import { type AddAccount, type IAddAccount } from '@/domain/usecases'
 import { mockAccountModel } from './MockAccount'
 
 export const mockAddAccount = (): AddAccount.Params => {
@@ -7,8 +7,8 @@ export const mockAddAccount = (): AddAccount.Params => {
   return {
     name: faker.name.lastName(),
     email: faker.internet.email(),
-    password: password,
-    passwordConfirmation: password,
+    password,
+    passwordConfirmation: password
   }
 }
 
@@ -19,7 +19,7 @@ export class AddAccountSpy implements IAddAccount {
   params: AddAccount.Params
   callsCount = 0
 
-  async add(params: AddAccount.Params): Promise<AddAccount.Model> {
+  async add (params: AddAccount.Params): Promise<AddAccount.Model> {
     this.params = params
     this.callsCount++
     return this.account

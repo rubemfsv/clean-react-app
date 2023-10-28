@@ -3,7 +3,7 @@ import React from 'react'
 import Styles from './styles.scss'
 import Template from '@/presentation/components/Template'
 
-type DashboardProps = {}
+interface DashboardProps {}
 
 const Dashboard: React.FC<DashboardProps> = () => {
   return (

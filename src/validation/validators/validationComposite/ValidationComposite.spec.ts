@@ -1,8 +1,8 @@
+import faker from 'faker'
 import { FieldValidationSpy } from '@/validation/test/MockFieldValidation'
 import { ValidationComposite } from './ValidationComposite'
-import faker from 'faker'
 
-type SutTypes = {
+interface SutTypes {
   sut: ValidationComposite
   fieldValidationsSpy: FieldValidationSpy[]
 }
@@ -10,14 +10,14 @@ type SutTypes = {
 const makeSut = (fieldName: string): SutTypes => {
   const fieldValidationsSpy = [
     new FieldValidationSpy(fieldName),
-    new FieldValidationSpy(fieldName),
+    new FieldValidationSpy(fieldName)
   ]
 
   const sut = ValidationComposite.build(fieldValidationsSpy)
 
   return {
     sut,
-    fieldValidationsSpy,
+    fieldValidationsSpy
   }
 }
 
@@ -30,7 +30,7 @@ describe('ValidationComposite', () => {
     fieldValidationsSpy[0].error = new Error(first_error_message)
     fieldValidationsSpy[1].error = new Error(second_error_message)
     const error = sut.validate(fieldName, {
-      [fieldName]: faker.random.words(),
+      [fieldName]: faker.random.words()
     })
     expect(error).toBe(error)
   })
@@ -40,7 +40,7 @@ describe('ValidationComposite', () => {
     const { sut } = makeSut(fieldName)
 
     const error = sut.validate(fieldName, {
-      [fieldName]: faker.random.words(),
+      [fieldName]: faker.random.words()
     })
     expect(error).toBeFalsy()
   })

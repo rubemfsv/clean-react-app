@@ -12,7 +12,7 @@ describe('SignUpValidationFactory', () => {
         ...ValidationBuilder.field('passwordConfirmation')
           .required()
           .sameAs('password')
-          .build(),
+          .build()
       ])
     )
   })
