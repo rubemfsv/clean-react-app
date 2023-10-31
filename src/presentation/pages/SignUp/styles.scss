@@ -30,6 +30,56 @@
 
       animation: SignUpAnimation 1.2s;
 
+      .signUpPasswordStrong{
+        height:5px;
+        width:300px;
+        border-radius: 5px;
+        background-color: $green;
+        margin-bottom: 20px;
+      }
+      .signUpPasswordStrongScript{
+        color: $green;
+        text-align: center;
+      }
+      .signUpPasswordMedium{
+        height:5px;
+        width:300px;
+        border-radius: 5px;
+        background-color: $orange;
+        margin-bottom: 20px;
+      }
+      .signUpPasswordMediumScript{
+        color: $orange;
+        text-align: center;
+      }
+      .signUpPasswordWeak{
+        height:5px;
+        width:300px;
+        border-radius: 5px;
+        background-color: $red;  
+        margin-bottom: 20px;    
+      }
+      .signUpPasswordWeakScript{
+        color: $red;
+        text-align: center;
+      }
+      .signUpPasswordBlank{
+        height:5px;
+        width:300px;
+        border-radius: 5px;
+        background-color: $darkGrey;
+        margin-bottom: 20px;
+      }
+      .signUpPasswordBlankScript{
+        color:$darkGrey;
+        text-align: center;
+        opacity: 50%;
+      }
+      .signUpPasswordforBlack{
+        color:$black;
+        text-align: center;
+      }
+
       .invertedMold {
         position: absolute;
         top: 0;
