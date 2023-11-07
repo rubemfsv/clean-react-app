@@ -32,24 +32,50 @@ const SignUp: React.FC<SignUpProps> = ({
     mainError: '',
   })
 
-  const [strength, setStrength] = useState('');
+  const [strength, setStrength] = useState('')
   const evaluatePasswordStrength = (value) => {
 
-    //Conditions for password strength
-    const strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$");
-    const mediumRegex = new RegExp("^(?=.{6,}).*$");
+    const strongRegex = new RegExp(
+      '^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$'
+    )
+    const mediumRegex = new RegExp('^(?=.{6,}).*$')
 
-    //logic
-    if(value.length<4){
-      setStrength('NotEnoughElements');
+    if(value.length===0){
+      setStrength('NoElement')
+    } else if (value.length < 4) {
+      setStrength('NotEnoughElements')
     } else if (strongRegex.test(value)) {
-      setStrength(`Strong`);
+      setStrength('Strong')
     } else if (mediumRegex.test(value)) {
-      setStrength('Medium');
+      setStrength('Medium')
     } else {
-      setStrength('Weak');
+      setStrength('Weak')
     }
-  };
+  }
+
+  function renderPasswordStrength(strength, styleClassScript, styleClass, label) {
+    let quote="Password Strength:";
+    if(strength === 'NoElement') {
+      quote="Password Strength Validator";
+      label = '';
+    }
+    else if (strength === 'NotEnoughElements') {
+      label = 'Enter more keys';
+    }
+
+    return (
+        <div>
+          <div className={styleClassScript}>
+            <strong className={Styles.signUpPasswordforBlack}>
+              {quote}
+            </strong>
+            {label}
+          </div>
+          <div className={styleClass}></div>
+        </div>
+      )
+  }
+
 
   useEffect(() => {
     const { email, name, password, passwordConfirmation } = state
@@ -66,7 +92,7 @@ const SignUp: React.FC<SignUpProps> = ({
       'passwordConfirmation',
       formData
     )
-    evaluatePasswordStrength(password);
+    evaluatePasswordStrength(password)
 
     setState({
       ...state,
@@ -135,38 +161,20 @@ const SignUp: React.FC<SignUpProps> = ({
               type="email"
               name="email"
             />
-            <Input className={Styles.signUpPassword}
+            <Input
+              className={Styles.signUpPassword}
               autoComplete="off"
               title="Enter your password"
               type="password"
               name="password"
               minLength={4}
             />
-            {(strength=="Strong") ? (
-              <div>
-                <div className={Styles.signUpPasswordStrongScript}><strong className={Styles.signUpPasswordforBlack}>Password Strength:</strong>Strong</div>
-                <div className={Styles.signUpPasswordStrong}></div>
-              </div>
-            ) : null}
-            {(strength=="Medium") ? (
-              <div>
-                <div className={Styles.signUpPasswordMediumScript}><strong className={Styles.signUpPasswordforBlack}>Password Strength:</strong>Medium</div>
-                <div className={Styles.signUpPasswordMedium}></div>
-              </div>
-            ) : null}
-            {(strength=="Weak") ? (
-              <div>
-                <div className={Styles.signUpPasswordWeakScript}><strong className={Styles.signUpPasswordforBlack}>Password Strength:</strong>Weak</div>
-                <div className={Styles.signUpPasswordWeak}></div>
-              </div>
-            ) : null}
-            {(strength=="NotEnoughElements") ? (
-              <div>
-                <div className={Styles.signUpPasswordBlankScript}><strong className={Styles.signUpPasswordforBlack}>Password Strength Validator</strong></div>
-                <div className={Styles.signUpPasswordBlank}></div>
-              </div>
-            ) : null}
-
+            
+            {strength === 'Strong' ? (renderPasswordStrength(strength, Styles.signUpPasswordStrongScript, Styles.signUpPasswordStrong, 'Strong')) : null}
+            {strength === 'Medium' ? (renderPasswordStrength(strength, Styles.signUpPasswordMediumScript, Styles.signUpPasswordMedium, 'Medium')) : null}
+            {strength === 'Weak' ? (renderPasswordStrength(strength, Styles.signUpPasswordWeakScript, Styles.signUpPasswordWeak, 'Weak')) : null}
+            {strength === 'NotEnoughElements' ? (renderPasswordStrength(strength, Styles.signUpPasswordBlankScript, Styles.signUpPasswordBlank, '')) : null}
+            {strength === 'NoElement' ? (renderPasswordStrength(strength, Styles.signUpPasswordBlankScript, Styles.signUpPasswordBlank, '')) : null}
 
             <Input
               autoComplete="off"
