@@ -30,6 +30,49 @@
 
       animation: SignUpAnimation 1.2s;
 
+      @mixin passwordStyle($bg-color) {
+        height: 5px;
+        width: 300px;
+        border-radius: 5px;
+        background-color: $bg-color;
+        margin-bottom: 20px;
+      }
+      .signUpPasswordStrong {
+        @include passwordStyle($green);
+      }
+      .signUpPasswordMedium {
+        @include passwordStyle($orange);
+      }
+      .signUpPasswordWeak {
+        @include passwordStyle($red);
+      }
+      .signUpPasswordBlank {
+        @include passwordStyle($darkGrey);
+      }
+
+      @mixin passwordStyleText($color, $opacity:100%) {
+        color: $color;
+        text-align: center;
+        opacity: $opacity;
+      }
+      .signUpPasswordStrongScript {
+        @include passwordStyleText($green);
+      }
+      .signUpPasswordMediumScript {
+        @include passwordStyleText($orange);
+      }
+      .signUpPasswordWeakScript {
+        @include passwordStyleText($red);
+      }
+      .signUpPasswordBlankScript {
+        @include passwordStyleText($darkGrey,50%);
+      }
+      .signUpPasswordforBlack {
+        color: $black;
+        text-align: center;
+      }
+      
+
       .invertedMold {
         position: absolute;
         top: 0;
